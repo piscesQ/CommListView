@@ -1,0 +1,28 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content">
+
+    <net.hyww.widget.flipper.MyFlipperView
+            android:id="@+id/ads"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#54000000"
+            android:paddingBottom="4dip"
+            android:paddingTop="4dip"
+            android:id="@+id/ads_layout">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/ads_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
