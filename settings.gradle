@@ -1,1 +1,1 @@
-include ':app', ':commlistviewlib'
+include ':app', ':commlistviewlib', ':ptr-lib'

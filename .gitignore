@@ -15,7 +15,7 @@ default.properties
 
 #gradle/Android Studio build folders
 build/
-gradle/
+#gradle/
 
 #OS gen folder information
 Thumbs.db
