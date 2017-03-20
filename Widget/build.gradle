@@ -15,7 +15,7 @@ android {
 }
 
 dependencies {
-    compile files('../libs/GifView.jar')
+//    compile files('../libs/GifView.jar')
 //    compile project(':AndroidBootstrap')
 //    compile project(':MPChartLib')
     compile 'com.android.support:support-v4:23.1.1'
