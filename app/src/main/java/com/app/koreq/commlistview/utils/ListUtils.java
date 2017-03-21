@@ -10,6 +10,7 @@ import com.app.koreq.commlistviewlib.render.BaseListRender;
 /**
  * project : CommListView
  * author : YanBin on 3/19/17
+ * version : v1.0
  * description :
  */
 public class ListUtils {

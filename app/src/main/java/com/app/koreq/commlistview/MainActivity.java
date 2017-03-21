@@ -12,6 +12,12 @@ import com.app.koreq.commlistviewlib.bean.BaseListBean;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * project : CommListView
+ * author : YanBin on 3/19/17
+ * version : v1.0
+ * description :
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ListView mListView;
