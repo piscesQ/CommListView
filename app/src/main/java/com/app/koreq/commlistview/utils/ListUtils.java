@@ -21,11 +21,11 @@ public class ListUtils {
     public static int getItemViewType(int viewType) {
         switch (viewType) {
             case ListConstant.VIEW_TEXT:
-                return ListConstant.TYPE_TEXT;
+                return ItemViewType.TYPE_TEXT.ordinal();
             case ListConstant.VIEW_ONE_IMAGE:
-                return ListConstant.TYPE_ONE_IMAGE;
+                return ItemViewType.TYPE_ONE_IMAGE.ordinal();
             default:
-                return ListConstant.TYPE_TEXT;
+                return ItemViewType.TYPE_TEXT.ordinal();
         }
     }
 

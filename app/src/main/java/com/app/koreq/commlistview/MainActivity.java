@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         commListAdapter.notifyDataSetChanged();
     }
 
-    private void initList(){
+    private void initList() {
         mList = new ArrayList<>();
 
         TextListBean textListBean = new TextListBean();

@@ -13,7 +13,7 @@ public class MainApplication extends Application {
     public static final String TAG = MainApplication.class.getSimpleName();
     public static MainApplication instance;
 
-    public synchronized static Application getInstance(){
+    public synchronized static MainApplication getInstance(){
         if (instance == null){
             instance = new MainApplication();
         }
