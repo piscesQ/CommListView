@@ -1,6 +1,5 @@
 package com.app.koreq.commlistview;
 
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
@@ -15,7 +14,6 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -48,28 +46,25 @@ public class CommListActivity extends AppCompatActivity {
     private void initData() {
         mList = new ArrayList<>();
 //        initList();
-        try {
-            getTestData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        getTestData();
         CommListAdapter commListAdapter = new CommListAdapter(this, null);
         mListView.setAdapter(commListAdapter);
         commListAdapter.replaceData(mList);
         commListAdapter.notifyDataSetChanged();
     }
 
-    private void getTestData() throws IOException {
-
-        InputStreamReader reader = new InputStreamReader(getAssets().open("data.txt"), "utf-8");
-        BufferedReader bufferedReader = new BufferedReader(reader);
-
+    private void getTestData() {
         StringBuilder builder = new StringBuilder();
-        String tempStr = null;
-        while ((tempStr = bufferedReader.readLine()) != null) {
-            builder.append(tempStr);
+        try {
+            InputStreamReader reader = new InputStreamReader(getAssets().open("data.txt"), "utf-8");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String tempStr = null;
+            while ((tempStr = bufferedReader.readLine()) != null) {
+                builder.append(tempStr);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
         String result = builder.toString();
 
         JsonParser parser = new JsonParser();
