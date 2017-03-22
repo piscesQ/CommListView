@@ -1,27 +1,12 @@
 package com.app.koreq.commlistview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ListView;
+import android.view.View;
+import android.widget.Button;
 
-import com.app.koreq.commlistview.adapter.CommListAdapter;
-import com.app.koreq.commlistview.bean.OneImageListBean;
-import com.app.koreq.commlistview.bean.TextListBean;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
-
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * project : CommListView
- * author : YanBin on 3/19/17
- * version : v1.0
- * description :
- */
-public class MainActivity extends AppCompatActivity {
-
-    private ListView mListView;
-    private List<BaseListBean> mList;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,49 +18,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mListView = (ListView) findViewById(R.id.main_list);
+        Button btnCommList = (Button) findViewById(R.id.btn_comm_list);
+        btnCommList.setOnClickListener(this);
     }
 
     private void initData() {
-        initList();
-        CommListAdapter commListAdapter = new CommListAdapter(this, null);
-        mListView.setAdapter(commListAdapter);
-        commListAdapter.replaceData(mList);
-        commListAdapter.notifyDataSetChanged();
+
     }
 
-    private void initList() {
-        mList = new ArrayList<>();
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.btn_comm_list:
+                startOtherActivity(CommListActivity.class);
+                break;
+        }
+    }
 
-        TextListBean textListBean = new TextListBean();
-        textListBean.setViewType(1);
-        textListBean.setInvokeType(1);
-        textListBean.setTitle("textListBean1");
-
-        mList.add(textListBean);
-
-        textListBean = new TextListBean();
-        textListBean.setViewType(1);
-        textListBean.setInvokeType(10);
-        textListBean.setTitle("textListBean2");
-
-        mList.add(textListBean);
-
-        OneImageListBean oneImageListBean = new OneImageListBean();
-        oneImageListBean.setViewType(11);
-        oneImageListBean.setInvokeType(11);
-        oneImageListBean.setTitle("oneImageBean1");
-        oneImageListBean.setUrl("url1");
-
-        mList.add(oneImageListBean);
-
-        oneImageListBean = new OneImageListBean();
-        oneImageListBean.setViewType(11);
-        oneImageListBean.setInvokeType(11);
-        oneImageListBean.setTitle("oneImageBean2");
-        oneImageListBean.setUrl("url2");
-
-        mList.add(oneImageListBean);
-
+    private void startOtherActivity(Class<?> cls) {
+        Intent intent = new Intent(this, cls);
+        startActivity(intent);
     }
 }

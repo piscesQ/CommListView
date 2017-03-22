@@ -10,6 +10,11 @@ import android.widget.Toast;
  * description :
  */
 public class ListConstant {
+
+    //========================= 服务端传入的gson对象中的字段名称 ===============================
+    public static final String NAME_VIEW_TYPE  = "viewType";
+    public static final String NAME_INVOKE_TYPE  = "invokeType";
+
     //========================= 服务端传入的viewType 数值由约定控制 ===============================
     public static final int VIEW_TEXT = 1;
     public static final int VIEW_ONE_IMAGE = 11;
