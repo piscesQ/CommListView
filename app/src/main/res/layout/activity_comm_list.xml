@@ -7,22 +7,17 @@
     tools:context="com.app.koreq.commlistview.CommListActivity"
     >
 
-    <net.hyww.widget.xlistview.PullToRefreshView
-        android:id="@+id/main_pull_refresh_view"
+
+    <com.app.koreq.commlistviewlib.view.CommListView
+        android:id="@+id/main_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fadingEdgeLength="0dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        />
 
-        <ListView
-            android:id="@+id/main_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fadingEdgeLength="0dp"
-            android:listSelector="@android:color/transparent"
-            android:scrollbars="none" />
+    <!-- </LinearLayout> -->
 
-        <!-- </LinearLayout> -->
-
-    </net.hyww.widget.xlistview.PullToRefreshView>
 
 </android.support.constraint.ConstraintLayout>
