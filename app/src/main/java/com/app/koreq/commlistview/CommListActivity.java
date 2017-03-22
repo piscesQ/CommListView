@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
-import com.app.koreq.commlistview.adapter.CommListAdapter;
-import com.app.koreq.commlistview.bean.OneImageListBean;
-import com.app.koreq.commlistview.bean.TextListBean;
+import com.app.koreq.commlistview.commlist.bean.OneImageListBean;
+import com.app.koreq.commlistview.commlist.bean.TextListBean;
+import com.app.koreq.commlistview.commlist.adapter.CommListAdapter;
 import com.app.koreq.commlistview.utils.GsonUtils;
 import com.app.koreq.commlistviewlib.bean.BaseListBean;
 import com.google.gson.JsonElement;
