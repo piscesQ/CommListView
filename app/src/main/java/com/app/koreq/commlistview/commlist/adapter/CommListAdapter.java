@@ -1,4 +1,4 @@
-package com.app.koreq.commlistview.adapter;
+package com.app.koreq.commlistview.commlist.adapter;
 
 import android.content.Context;
 

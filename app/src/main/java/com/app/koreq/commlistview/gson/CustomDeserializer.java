@@ -1,7 +1,7 @@
 package com.app.koreq.commlistview.gson;
 
-import com.app.koreq.commlistview.bean.OneImageListBean;
-import com.app.koreq.commlistview.bean.TextListBean;
+import com.app.koreq.commlistview.commlist.bean.OneImageListBean;
+import com.app.koreq.commlistview.commlist.bean.TextListBean;
 import com.app.koreq.commlistview.utils.GsonUtils;
 import com.app.koreq.commlistview.utils.ListConstant;
 import com.app.koreq.commlistviewlib.bean.BaseListBean;

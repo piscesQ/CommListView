@@ -2,8 +2,8 @@ package com.app.koreq.commlistview.utils;
 
 import android.content.Context;
 
-import com.app.koreq.commlistview.render.OneImageRender;
-import com.app.koreq.commlistview.render.TextRender;
+import com.app.koreq.commlistview.commlist.render.OneImageRender;
+import com.app.koreq.commlistview.commlist.render.TextRender;
 import com.app.koreq.commlistviewlib.bean.BaseListBean;
 import com.app.koreq.commlistviewlib.render.BaseListRender;
 

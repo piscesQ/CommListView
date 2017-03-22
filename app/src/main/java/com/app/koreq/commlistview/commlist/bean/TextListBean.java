@@ -1,4 +1,4 @@
-package com.app.koreq.commlistview.bean;
+package com.app.koreq.commlistview.commlist.bean;
 
 import com.app.koreq.commlistviewlib.bean.BaseListBean;
 
@@ -7,9 +7,9 @@ import com.app.koreq.commlistviewlib.bean.BaseListBean;
  * author : YanBin on 3/19/17
  * description :
  */
-public class OneImageListBean extends BaseListBean{
+public class TextListBean extends BaseListBean{
+
     private String title;
-    private String url;
 
     public String getTitle() {
         return title;
@@ -17,13 +17,5 @@ public class OneImageListBean extends BaseListBean{
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }
