@@ -1,5 +1,8 @@
 package com.app.koreq.commlistview.utils;
 
+import android.util.Base64;
+import android.util.Log;
+
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 
@@ -20,6 +23,8 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class AESUtils {
 
+    public static final String TAG = AESUtils.class.getSimpleName();
+
     /**
      * 密钥算法
      */
@@ -27,10 +32,10 @@ public class AESUtils {
 
     private static final String DEFAULT_CIPHER_ALGORITHM = "AES/ECB/PKCS5Padding";
 
-    public static final String AESKey = "fb22b90701e692a0e641a9d0a013542a"; //test
+    public static final String AESKey = "baf2712390e5495db4f21b67275c0ea0"; //test
 
     /**
-     * 初始化密钥 example : fb22b90701e692a0e641a9d0a013542a
+     * 初始化密钥 example : baf2712390e5495db4f21b67275c0ea0
      *
      * @return byte[] 密钥
      * @throws Exception
@@ -177,6 +182,31 @@ public class AESUtils {
         cipher.init(Cipher.DECRYPT_MODE, key);
         //执行操作
         return cipher.doFinal(data);
+    }
+
+    public static String decryptFormTr(String sKey, String sSrc) throws Exception {
+        //Fatal Exception: java.lang.OutOfMemoryError
+        //java.lang.AbstractStringBuilder.enlargeBuffer
+        // log 信息组装在低配置手机可能造成崩溃
+//        LOG.i(DBG, TAG, "Encrypt key:" + sKey + "  src:" + sSrc);
+        // 判断Key是否正确
+        if (sKey == null) {
+            Log.e(TAG, "Key为空null");
+            return null;
+        }
+        // 判断Key是否为16位
+//        if (sKey.length() != 16) {
+//            LOG.e(DBG, TAG, "Key长度不是16位");
+//            return null;
+//        }
+
+        byte[] raw = sKey.getBytes("utf-8");
+        SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+        Cipher cipher = Cipher.getInstance("AES/ECB/ZeroBytePadding");
+        cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+        byte[] encrypted1 = Base64.decode(sSrc, Base64.NO_WRAP);//先用base64解密
+        byte[] original = cipher.doFinal(encrypted1);
+        return new String(original, "utf-8");
     }
 
     private static String showByteArray(byte[] data) {
