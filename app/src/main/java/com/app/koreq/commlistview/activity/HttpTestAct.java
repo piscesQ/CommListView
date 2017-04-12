@@ -182,6 +182,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
         });
     }
 
+    // 发送retrofit请求，并获得返回的json
     private void sendRetrofitPostJsonRequest() {
         RetrofitDemoUtils.doPostJsonRequest(new retrofit2.Callback<ResponseBody>() {
             @Override
