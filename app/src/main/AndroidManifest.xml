@@ -3,6 +3,8 @@
           package="com.app.koreq.commlistview"
     >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -11,13 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".CommListActivity">
+        <activity android:name=".activity.CommListActivity">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.HttpTestAct">
+        </activity>
+        <activity android:name=".activity.widget.PairScrollAct">
+        </activity>
+        <activity android:name=".base.BaseAct">
         </activity>
     </application>
 

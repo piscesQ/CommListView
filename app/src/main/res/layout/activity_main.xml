@@ -5,13 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.koreq.commlistview.MainActivity"
+    tools:context="com.app.koreq.commlistview.activity.MainActivity"
     >
+
     <Button
         android:id="@+id/btn_comm_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CommList"
+        />
+
+    <Button
+        android:id="@+id/btn_http_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_comm_list"
+        android:text="Http Test"
+        />
+
+    <Button
+        android:id="@+id/btn_pairview_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_http_test"
+        android:text="Pair View Test"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -27,3 +27,7 @@ Thumbs.db
 *.swp
 *.vpp~*
 *.*~
+
+#eclipse config files
+.project
+.settings/

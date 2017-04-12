@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.koreq.commlistview.activity.HttpTestAct"
+    >
+
+    <Button
+        android:id="@+id/http_ok_get_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK Get Request"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="0dp"
+        />
+
+    <Button
+        android:id="@+id/http_ok_post_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:text="OK Post Request"
+        app:layout_constraintLeft_toRightOf="@+id/http_ok_get_request"
+        />
+
+    <Button
+        android:id="@+id/http_retrofit_get_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Retrofit Get Req"
+        app:layout_constraintTop_toBottomOf="@+id/http_ok_get_request"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="0dp"
+        />
+
+    <Button
+        android:id="@+id/http_retrofit_post_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retrofit Post Req"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/http_ok_post_request"
+        app:layout_constraintLeft_toRightOf="@+id/http_retrofit_get_request"
+        android:layout_marginLeft="0dp"
+        />
+
+    <TextView
+        android:id="@+id/http_show_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_00eeee"
+        android:text="Show Response Data"
+        app:layout_constraintTop_toBottomOf="@+id/http_retrofit_get_request"
+        />
+
+</android.support.constraint.ConstraintLayout>
