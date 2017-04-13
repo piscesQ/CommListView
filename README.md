@@ -8,4 +8,6 @@ v3.0 增加网络框架 rxJava + okHttp <br/>
 ``` 
 参考链接： http://tech.youzan.com/android_http/ 
 ```
+|-- v3.1 git pull 和 git fetch 试验 <br/>
+
 v4.0 日志统计 bug 统计框架（面向切面） <br/>
