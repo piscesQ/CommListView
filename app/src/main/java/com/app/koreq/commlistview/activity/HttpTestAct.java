@@ -182,6 +182,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
         });
     }
 
+    // 发送retrofit请求，并获得返回的json
     private void sendRetrofitPostJsonRequest() {
         RetrofitDemoUtils.doPostJsonRequest(new retrofit2.Callback<ResponseBody>() {
             @Override
@@ -198,7 +199,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
                     String decrypt = "";
                     try {
 //                        string = string.replaceAll("\\n", "");
-                        decrypt = AESUtils.decryptFormTr(AESUtils.AESKey,string);
+                        decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, string);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -208,8 +209,8 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
                     //在UI线程中
                     mTvShowData.setText(
                             "member = " + demoResult.class_count_member + ", \n" +
-                            "icon   = " + demoResult.class_icon + ",\n" +
-                            "name   = " + demoResult.class_name);
+                                    "icon   = " + demoResult.class_icon + ", \n" +
+                                    "name   = " + demoResult.class_name);
                 }
             }
 
