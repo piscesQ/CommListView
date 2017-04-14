@@ -61,18 +61,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, cls);
         startActivity(intent);
     }
-
-    // fix bug_01 main
-    // fix bug_02 other
-    // fix bug_03 main
-    // fix bug_04 other
-    // fix bug_05 main
-    // fix bug_06 other
-    // fix bug_07 main
-    // fix bug_08 other
-    // fix bug_09 main
-    // fix bug_10 other
-    // fix bug_11 main
-    // fix bug_12 other
-    // fix bug_13 main
 }
