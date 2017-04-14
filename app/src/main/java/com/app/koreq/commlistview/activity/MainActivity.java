@@ -73,4 +73,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // fix bug_09 main
     // fix bug_10 other
     // fix bug_11 main
+    // fix bug_13 main
 }
