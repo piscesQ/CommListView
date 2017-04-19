@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    Properties props = new Properties();    //定义属性
+    props.load(new FileInputStream(file(rootProject.file("config.properties"))))    //加载自定义文件
+
     compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
@@ -11,6 +15,30 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //为了解决如下错误
+        //Error:Jack is required to support java 8 language features. Either enable Jack or remove sourceCompatibility JavaVersion.VERSION_1_8.
+        jackOptions {    //Jack工具链 替代javac
+            enabled true
+            //参考链接：https://developer.android.com/guide/platform/j8-jack.html
+        }
+
+        // 增加res 属性 相当于定义在string.xml中的属性
+        resValue "string", "current_time", getTime()    //String测试  正常
+//        resValue "bool", "IS_DEBUG", 'true'     //bool测试 单引号 正常
+//        resValue "bool", "IS_DEBUG", "true"     //bool测试 双引号 正常
+//        resValue "bool", "IS_DEBUG", isDebug()     //bool测试 正常
+        resValue "integer", "test_num_1", "12345"     //整型测试 正常
+        resValue "integer", "test_num_2", getTestNum()     //整型测试 正常
+
+        //gradle.properties文件中定义属性
+        resValue "string", "test_string", project.test_string   //String测试  正常
+        resValue "integer", "test_int", project.test_integer    //整型测试 正常
+        resValue "bool", "test_bool", project.test_bool         //bool测试 正常
+
+        // 先加载自定义的文件，然后使用该文件中的属性进行赋值
+        resValue("integer","host_env", props['host_env'])   //整型测试 正常
+        resValue("bool","is_debug", props['is_debug'])      //bool测试 正常
     }
     buildTypes {
         release {
@@ -18,6 +46,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //指定编译版本
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def isDebug(){
+    return 'true'
+}
+def getTime() {
+    return new Date().format("yyyy-MM-dd HH:mm:ss")
+}
+def getTestNum() {
+    return "23456"
 }
 
 dependencies {
@@ -35,9 +79,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'io.reactivex:rxjava:x.y.z'
     compile 'io.reactivex:rxandroid:1.0.1'
-    compile 'com.squareup.retrofit2:retrofit:2.0.2'
-    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     testCompile 'junit:junit:4.12'
 }
