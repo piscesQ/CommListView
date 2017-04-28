@@ -32,7 +32,7 @@ public class AESUtils {
 
     private static final String DEFAULT_CIPHER_ALGORITHM = "AES/ECB/PKCS5Padding";
 
-    public static final String AESKey = "baf2712390e5495db4f21b67275c0ea0"; //test
+    public static final String AESKey = "dfdf390a074130d157a2305fd2f7d1dc"; //test
 
     /**
      * 初始化密钥 example : baf2712390e5495db4f21b67275c0ea0

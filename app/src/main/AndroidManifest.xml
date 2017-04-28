@@ -26,7 +26,7 @@
         </activity>
         <activity android:name=".activity.widget.PairScrollAct">
         </activity>
-        <activity android:name=".base.BaseAct">
+        <activity android:name=".activity.RxJavaActivity">
         </activity>
     </application>
 

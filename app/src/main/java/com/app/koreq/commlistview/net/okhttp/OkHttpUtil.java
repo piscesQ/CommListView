@@ -114,4 +114,8 @@ public class OkHttpUtil {
     public static String attachHttpGetParam(String url, String name, String value) {
         return url + "?" + name + "=" + value;
     }
+
+    //参考链接：http://ngudream.com/2016/07/22/okhttp-call-cancel/
+    public static void cancelCall(){
+    }
 }
