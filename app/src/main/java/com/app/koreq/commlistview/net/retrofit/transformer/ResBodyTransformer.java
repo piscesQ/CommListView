@@ -1,8 +1,10 @@
-package com.app.koreq.commlistview.net.retrofit;
+package com.app.koreq.commlistview.net.retrofit.transformer;
 
 import android.util.Log;
 
 import com.app.koreq.commlistview.net.frame.bean.BaseHttpResponse;
+import com.app.koreq.commlistview.net.retrofit.HttpApiException;
+import com.app.koreq.commlistview.net.retrofit.HttpConstant;
 import com.app.koreq.commlistview.utils.AESUtils;
 import com.app.koreq.commlistview.utils.GsonUtils;
 
@@ -17,32 +19,30 @@ import rx.functions.Func1;
  * version : v3.2
  * description :
  */
-public class StringTransformer<T> implements Observable.Transformer<T, String> {
+public class ResBodyTransformer<T> implements Observable.Transformer<T, ResponseBody> {
     @Override
-    public Observable<String> call(Observable<T> tObservable) {
-        return tObservable.compose(new SchedulerTransformer<>())
-                .compose(new ErrorStrTransformer<>());
+    public Observable<ResponseBody> call(Observable<T> tObservable) {
+        return tObservable.compose(new SchedulerTransformer<>())    //线程切换
+                .compose(new ErrorBodyTransformer<T>());            //错误处理，并返回ResponseBody对象
     }
 }
 
-
 /**
- * 错误处理、解密、转换成String
+ * 错误处理、解密、转换成ResponseBody
  *
  * @param <T>
  */
-class ErrorStrTransformer<T> implements Observable.Transformer<T, String> {
+class ErrorBodyTransformer<T> implements Observable.Transformer<T, ResponseBody> {
 
     @Override
-    public Observable<String> call(Observable<T> responseObservable) {
-        return responseObservable.map(new Func1<T, String>() {
+    public Observable<ResponseBody> call(Observable<T> responseObservable) {
+        return responseObservable.map(new Func1<T, ResponseBody>() {
             @Override
-            public String call(T t) {
+            public ResponseBody call(T t) {
                 Log.d(HttpConstant.TAG, "ErrorTransformer - currentThread = " + Thread.currentThread().getName());  //main
 
                 Response response = null;
                 ResponseBody body = null;
-                String decrypt = null;
                 if (t instanceof Response) {
                     response = (Response) t;
                     int code = response.code();
@@ -58,7 +58,7 @@ class ErrorStrTransformer<T> implements Observable.Transformer<T, String> {
                         if (body == null) return null;
                         BaseHttpResponse baseHttpResponse = null;
                         try {
-                            decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, body.string());    //解密
+                            String decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, body.string());    //解密
                             baseHttpResponse = GsonUtils.getGson().fromJson(decrypt, BaseHttpResponse.class);
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -70,7 +70,7 @@ class ErrorStrTransformer<T> implements Observable.Transformer<T, String> {
                         }
                     }
                 }
-                return decrypt;
+                return body;    //TODO kore 此处传递ResponseBody对象，在subscriber中处理时，content为null，暂时未找到原因
             }
         });
     }

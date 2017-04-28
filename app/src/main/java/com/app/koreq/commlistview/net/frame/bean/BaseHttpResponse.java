@@ -3,7 +3,7 @@ package com.app.koreq.commlistview.net.frame.bean;
 /**
  * project : CommListView
  * author : YanBin on 4/19/17
- * version : v
+ * version : v3.2
  * description :
  */
 public class BaseHttpResponse {

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.app.koreq.commlistview.net.bean.DemoBean;
 import com.app.koreq.commlistview.net.bean.DemoListBean;
 import com.app.koreq.commlistview.net.bean.DemoRequest;
+import com.app.koreq.commlistview.net.retrofit.transformer.StringTransformer;
 import com.app.koreq.commlistview.utils.AESUtils;
 
 import java.io.IOException;
@@ -304,7 +305,10 @@ public class RetrofitDemoUtils {
         listRxResData.compose(new StringTransformer<>()).subscribe(subscriber);
     }
 
-    public static void sendRequest() {
+    /**
+     * 采用封装方法的请求
+     */
+    public static void sendRequest() {  //正确
 
         DemoRequest request = new DemoRequest();
         request.setData("7yBzesTb9fuAesM2f9bG1uqR8MNxwFGjDEmb1PfohpnKloFvK3LoNC7JIAvA0ba9Htc6ZbyHTXebsqNgNz9/C+oYX2aaUrjpBr7E7nvgi4lwehN8lBpR5ySoXj1dPD+sqAXncwyQVLgumXPPZRlOoYGWE0ktEO3a+BH4ZF0iUKVhS1xEG+nFGxfTjvj2lUL+i8HWKblb+3L18NUUNaSItUjTveyppsTjfbwLcCMz156cRxLnASdey3N8N+eY7dHBb1HXddNjMwv+q7j5hMopDX/mJbUxSSetLqmX/Rp0SPZQIDhOY1HmbEGi45ZxeenYpajywLlWRYZuIunVUtT+H8Vk0DqGHLLmvZQMH1t+Nyo5TsZbFN0iIhDMupLkSpWeY1WIQIFttTufw2dMR+63CtaYrloSyyDiGRTf8Q/swxjO/RgAyvZQYi0+0MV6mR0DR26cMQ0thjvVU7OiQfdY+a6v3SvOuzfBAUo8k8oZCI4RC8LM2w/tWI22ljEjS6oJ64vmh4lVXEhmhg/CV1XMqEyGz/tcdqRwv37taiMBTPVTwkfmTy9pIUIde98TDhT+o5skIbg0jCok3H62u3cGg+J3TlPzff6JZ40OKA5OjWKHMTgoW2N+8/xXPo2iifvSPAhzhJYPh9kYi/FsKbE9ovNSl/Z4TRHzhs8sfW6TSjrCu2Cmrdc/yLs1wPiQ1AbdjnJcICkLq7Pth87wWByRp/pKRx9mUnbe17GuSfeMKxXgTG59fFIj4XHc5NQ04M0Cf5gWY5P8R6DQ9F8DlDwXubPRsb3/qsgHH9wQ8iGbcHHv3Xht9UNNSBFpgwFml7+zKDsh1+UkCtAyHhf46DXBMninNRuIYwFv/p5eG4/3yyNHN9Ov1kLl7T1RPfkuwdqHCmaoiB1yB2aa2hxXeHeHal05IHjJTcSf+lVVqPT1gUpzDa+NVA0sAPvuWrrimupY5+5JUIV4O2IFT3fPyPghYD2b9j56rlCOAw/+wCdqOOV6d9aIXtGOi8k38ywSx5ZOq4PGUzBr4uYXZGnmDJ8MCEgGW6BtBrzrq3+0ei03QpzjcXSatxp7fgRYt3TaMJPUV1V3wfC32jhmxqKVjdzYpsO1cbMooDu98r9bvHZ0pgn/7c6U3dchEP/ua/YvyMRNgFWvefiPiZJzw88kIxmDP58B7Iz/cQTHQ92H69/aYaqjTz3SypFy736ttlWThgFOm7hzAOhKLudoQleWvdMpvw\u003d\u003d");

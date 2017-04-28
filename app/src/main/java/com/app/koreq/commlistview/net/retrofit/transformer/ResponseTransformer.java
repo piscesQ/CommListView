@@ -1,8 +1,10 @@
-package com.app.koreq.commlistview.net.retrofit;
+package com.app.koreq.commlistview.net.retrofit.transformer;
 
 import android.util.Log;
 
 import com.app.koreq.commlistview.net.frame.bean.BaseHttpResponse;
+import com.app.koreq.commlistview.net.retrofit.HttpApiException;
+import com.app.koreq.commlistview.net.retrofit.HttpConstant;
 import com.app.koreq.commlistview.utils.AESUtils;
 import com.app.koreq.commlistview.utils.GsonUtils;
 
