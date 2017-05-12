@@ -126,6 +126,25 @@ public class AESUtils {
         return cipher.doFinal(data);
     }
 
+    public static String encryptFromTr(String sKey, String sSrc) throws Exception {
+
+        if (sKey == null) {
+            return null;
+        }
+        // 判断Key是否为16位
+//        if (sKey.length() != 16) {
+//            LOG.e(DBG, TAG, "Key长度不是16位");
+//            return null;
+//        }
+        byte[] raw = sKey.getBytes("utf-8");
+        SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+        Cipher cipher = Cipher.getInstance("AES/ECB/ZeroBytePadding");//"算法/模式/补码方式"
+        cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+        byte[] encrypted = cipher.doFinal(sSrc.getBytes("utf-8"));
+
+        return Base64.encodeToString(encrypted, Base64.NO_WRAP);//此处使用BASE64做转码功能，同时能起到2次加密的作用。
+    }
+
 
     /**
      * 解密
@@ -184,7 +203,7 @@ public class AESUtils {
         return cipher.doFinal(data);
     }
 
-    public static String decryptFormTr(String sKey, String sSrc) throws Exception {
+    public static String decryptFromTr(String sKey, String sSrc) throws Exception {
         //Fatal Exception: java.lang.OutOfMemoryError
         //java.lang.AbstractStringBuilder.enlargeBuffer
         // log 信息组装在低配置手机可能造成崩溃
