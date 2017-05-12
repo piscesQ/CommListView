@@ -37,8 +37,8 @@ android {
         resValue "bool", "test_bool", project.test_bool         //bool测试 正常
 
         // 先加载自定义的文件，然后使用该文件中的属性进行赋值
-        resValue("integer","host_env", props['host_env'])   //整型测试 正常
-        resValue("bool","is_debug", props['is_debug'])      //bool测试 正常
+        resValue("integer", "host_env", props['host_env'])   //整型测试 正常
+        resValue("bool", "is_debug", props['is_debug'])      //bool测试 正常
     }
     buildTypes {
         release {
@@ -54,12 +54,14 @@ android {
     }
 }
 
-def isDebug(){
+def isDebug() {
     return 'true'
 }
+
 def getTime() {
     return new Date().format("yyyy-MM-dd HH:mm:ss")
 }
+
 def getTestNum() {
     return "23456"
 }
@@ -72,16 +74,12 @@ dependencies {
     })
     compile project(':commlistviewlib')
     compile project(':commwidgetlib')
+    compile project(':netlib')
 
     //    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.code.gson:gson:2.8.0'
-    compile 'io.reactivex:rxjava:x.y.z'
-    compile 'io.reactivex:rxandroid:1.0.1'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
 }

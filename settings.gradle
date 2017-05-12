@@ -1,1 +1,1 @@
-include ':app', ':commlistviewlib', ':ptr-lib', ':commwidgetlib'
+include ':app', ':commlistviewlib', ':ptr-lib', ':commwidgetlib', ':netlib', ':commlib'
