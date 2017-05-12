@@ -5,8 +5,10 @@ import android.util.Log;
 import com.app.koreq.commlistview.net.bean.DemoBean;
 import com.app.koreq.commlistview.net.bean.DemoListBean;
 import com.app.koreq.commlistview.net.bean.DemoRequest;
+import com.app.koreq.commlistview.net.bean.TreeResult;
 import com.app.koreq.commlistview.net.retrofit.transformer.StringTransformer;
 import com.app.koreq.commlistview.utils.AESUtils;
+import com.app.koreq.commlistview.utils.GsonUtils;
 
 import java.io.IOException;
 
@@ -193,7 +195,7 @@ public class RetrofitDemoUtils {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(responseBody -> {
                             try {
-                                String decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, responseBody.string());
+                                String decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, responseBody.string());
                                 Log.d(TAG, "postRxJsonResponse = " + decrypt);
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -330,8 +332,9 @@ public class RetrofitDemoUtils {
             @Override
             public void onNext(String result) {
                 try {
-                    String code = String.valueOf(result);
-                    Log.d(TAG, "post sendRequest-optimize code = " + code);
+                    String str = String.valueOf(result);
+                    Log.d(TAG, "post sendRequest-optimize result = " + str);
+                    TreeResult demoResult = GsonUtils.getGson().fromJson(str, TreeResult.class);    //正常
 
 //                                String decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, responseBody.string());
 //                                Log.d(TAG, "post doRxResReq body = " + decrypt);

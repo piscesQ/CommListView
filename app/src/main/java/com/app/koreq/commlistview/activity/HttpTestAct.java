@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.net.bean.DemoBean;
 import com.app.koreq.commlistview.net.bean.DemoListBean;
-import com.app.koreq.commlistview.net.bean.DemoResult;
+import com.app.koreq.commlistview.net.bean.TreeResult;
 import com.app.koreq.commlistview.net.okhttp.OkHttpDemoUtils;
 import com.app.koreq.commlistview.net.retrofit.RetrofitDemoUtils;
 import com.app.koreq.commlistview.utils.AESUtils;
@@ -199,18 +199,18 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
                     String decrypt = "";
                     try {
 //                        string = string.replaceAll("\\n", "");
-                        decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, string);
+                        decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, string);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     JsonParser parser = new JsonParser();
                     JsonElement parse = parser.parse(decrypt);
-                    DemoResult demoResult = GsonUtils.getGson().fromJson(parse, DemoResult.class);  //正常
+                    TreeResult demoResult = GsonUtils.getGson().fromJson(parse, TreeResult.class);  //正常
                     //在UI线程中
                     mTvShowData.setText(
-                            "member = " + demoResult.class_count_member + ", \n" +
-                                    "icon   = " + demoResult.class_icon + ", \n" +
-                                    "name   = " + demoResult.class_name);
+                            "getTotal_number = " + demoResult.getTotal_number() + ", \n" +
+                                    "getTotal_used_time   = " + demoResult.getTotal_used_time() + ", \n" +
+                                    "getIsCache   = " + demoResult.getIsCache());
                 }
             }
 

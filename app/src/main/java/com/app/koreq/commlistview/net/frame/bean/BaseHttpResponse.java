@@ -7,22 +7,22 @@ package com.app.koreq.commlistview.net.frame.bean;
  * description :
  */
 public class BaseHttpResponse {
-    private int code;
-    private String msg;
+    private int error_code;
+    private String error;   //错误信息
 
     public int getCode() {
-        return code;
+        return error_code;
     }
 
     public void setCode(int code) {
-        this.code = code;
+        this.error_code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getError() {
+        return error;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setError(String error) {
+        this.error = error;
     }
 }

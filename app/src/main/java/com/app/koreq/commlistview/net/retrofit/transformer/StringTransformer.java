@@ -60,12 +60,13 @@ class ErrorStrTransformer<T> implements Observable.Transformer<T, String> {
                         if (body == null) return null;
                         BaseHttpResponse baseHttpResponse = null;
                         try {
-                            decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, body.string());    //解密
-                            baseHttpResponse = GsonUtils.getGson().fromJson(decrypt, BaseHttpResponse.class);
+                            decrypt = body.string();    //赋默认值
+                            decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, decrypt);    //解密
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
 
+                        baseHttpResponse = GsonUtils.getGson().fromJson(decrypt, BaseHttpResponse.class);
                         if (baseHttpResponse != null) {
                             int serverCode = baseHttpResponse.getCode();
                             dealServerError(serverCode);

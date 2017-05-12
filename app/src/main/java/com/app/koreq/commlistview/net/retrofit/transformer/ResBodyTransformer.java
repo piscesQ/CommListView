@@ -58,7 +58,7 @@ class ErrorBodyTransformer<T> implements Observable.Transformer<T, ResponseBody>
                         if (body == null) return null;
                         BaseHttpResponse baseHttpResponse = null;
                         try {
-                            String decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, body.string());    //解密
+                            String decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, body.string());    //解密
                             baseHttpResponse = GsonUtils.getGson().fromJson(decrypt, BaseHttpResponse.class);
                         } catch (Exception e) {
                             e.printStackTrace();

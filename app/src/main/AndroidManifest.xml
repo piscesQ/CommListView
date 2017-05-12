@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:networkSecurityConfig="@xml/network_security_config"
         >
         <activity android:name=".activity.CommListActivity">
         </activity>
@@ -30,6 +30,12 @@
         <activity android:name=".activity.RxJavaActivity">
         </activity>
         <activity android:name=".activity.NetFrameActivity">
+        </activity>
+        <activity
+            android:name=".activity.TreeDecryptActivity"
+            android:label="@string/title_activity_tree_decrypt"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
         </activity>
     </application>
 

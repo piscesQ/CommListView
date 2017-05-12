@@ -33,12 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnPairTest = (Button) findViewById(R.id.btn_pairview_test);
         Button btnRxjavaTest = (Button) findViewById(R.id.btn_rxjava_test);
         Button btnGradleStr = (Button) findViewById(R.id.btn_gradle_str_test);
+        Button btnNetFrame = (Button) findViewById(R.id.btn_net_frame);
+        Button btnTreeDecrypt = (Button) findViewById(R.id.btn_tree_decrypt);
 
         btnCommList.setOnClickListener(this);
         btnHttpTest.setOnClickListener(this);
         btnPairTest.setOnClickListener(this);
         btnRxjavaTest.setOnClickListener(this);
         btnGradleStr.setOnClickListener(this);
+        btnNetFrame.setOnClickListener(this);
+        btnTreeDecrypt.setOnClickListener(this);
     }
 
     private void initData() {
@@ -63,6 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_gradle_str_test:    //Rxjava
                 toastGradleRes();
+                break;
+            case R.id.btn_net_frame:    //net frame
+                NetFrameActivity.launchAct(this);
+                break;
+            case R.id.btn_tree_decrypt:    //net frame
+                TreeDecryptActivity.launchAct(this);
                 break;
         }
     }
