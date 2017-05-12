@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CommListView</string>
+    <string name="title_activity_tree_decrypt">TreeDecryptActivity</string>
 </resources>
