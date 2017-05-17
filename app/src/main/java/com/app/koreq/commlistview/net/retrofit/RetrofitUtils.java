@@ -1,20 +1,14 @@
 package com.app.koreq.commlistview.net.retrofit;
 
-import com.app.koreq.commlistview.MainApplication;
-import com.app.koreq.commlistview.R;
-import com.app.koreq.commlistview.net.HttpUtils;
+import com.app.koreq.commlistview.net.frame.HttpUtils;
 import com.app.koreq.commlistview.utils.Config;
 import com.app.koreq.commlistview.utils.FileUtils;
-import com.app.koreq.commlistview.utils.NetUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

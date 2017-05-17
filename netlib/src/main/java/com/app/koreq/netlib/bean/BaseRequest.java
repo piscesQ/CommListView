@@ -12,7 +12,7 @@ import rx.Subscriber;
  * project : CommListView
  * author : YanBin on 4/28/17
  * version : v
- * description :
+ * description : Request 的父类 - 所有的请求都需要继承该类
  */
 public abstract class BaseRequest<T> {
     private String mParams;

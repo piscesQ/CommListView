@@ -1,4 +1,4 @@
-package com.app.koreq.commlistview.net.frame.bean;
+package com.app.koreq.commlistview.net.bean;
 
 import com.app.koreq.commlistview.MainApplication;
 

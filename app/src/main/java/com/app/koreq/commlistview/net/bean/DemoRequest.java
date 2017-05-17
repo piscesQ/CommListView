@@ -1,8 +1,5 @@
 package com.app.koreq.commlistview.net.bean;
 
-import com.app.koreq.commlistview.net.frame.bean.BaseHttpRequest;
-import com.app.koreq.commlistview.net.frame.bean.BaseHttpResponse;
-
 /**
  * project : CommListView
  * author : YanBin on 4/7/17

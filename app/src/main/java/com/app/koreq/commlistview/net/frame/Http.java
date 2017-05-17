@@ -1,7 +1,6 @@
 package com.app.koreq.commlistview.net.frame;
 
-import com.app.koreq.commlistview.net.HttpUtils;
-import com.app.koreq.commlistview.net.retrofit.transformer.StringTransformer;
+import com.app.koreq.commlistview.net.frame.transformer.StringTransformer;
 import com.app.koreq.commlistview.utils.AESUtils;
 import com.app.koreq.commlistview.utils.Config;
 import com.app.koreq.commlistview.utils.FileUtils;

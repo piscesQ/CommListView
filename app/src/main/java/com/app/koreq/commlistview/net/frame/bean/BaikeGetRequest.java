@@ -11,7 +11,7 @@ import java.lang.reflect.Type;
  * project : CommListView
  * author : YanBin on 5/3/17
  * version : v3.2
- * description :
+ * description : Demo - 测试get请求
  */
 public class BaikeGetRequest extends BaseRequest<BaikeResult> {
     private Params mChildParams;

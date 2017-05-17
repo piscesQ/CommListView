@@ -13,7 +13,7 @@ import java.util.HashMap;
  * project : CommListView
  * author : YanBin on 4/28/17
  * version : v
- * description :
+ * description : Demo - 测试post请求
  */
 public class TreePostRequest extends BaseRequest<TreeResult> {
     private String url;

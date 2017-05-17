@@ -4,7 +4,7 @@ package com.app.koreq.netlib.http;
  * project : CommListView
  * author : YanBin on 4/28/17
  * version : v
- * description :
+ * description : 定义Http请求必要的常量
  */
 public class HttpConstants {
     public static final int TYPE_GET = 0;     //GET 请求

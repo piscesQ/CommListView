@@ -16,7 +16,7 @@ import rx.Observable;
  * project : CommListView
  * author : YanBin on 4/28/17
  * version : v
- * description :
+ * description : 请求接口，所有请求都走此处
  */
 public interface HttpApi {
 

@@ -4,7 +4,7 @@ package com.app.koreq.commlistview.net.frame.bean;
  * project : CommListView
  * author : YanBin on 4/19/17
  * version : v3.2
- * description :
+ * description : 封装的Response的父类 所有的Response返回的对象都应该继承此类
  */
 public class BaseHttpResponse {
     private int error_code;
