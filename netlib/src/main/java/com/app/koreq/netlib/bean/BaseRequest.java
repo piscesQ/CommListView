@@ -4,6 +4,7 @@ import com.app.koreq.netlib.http.HttpConstants;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.Map;
 
 import rx.Subscriber;
 
@@ -15,13 +16,14 @@ import rx.Subscriber;
  */
 public abstract class BaseRequest<T> {
     private String mParams;
+    private Map<String, String> mMapParams;
     private int mRequestType = HttpConstants.TYPE_POST;
     private Subscriber<T> mSubscriber;
 
     //    private int method = HttpConstants.METHOD_POST;
     public class Params {
         //TODO 公参
-//        public long currTime = System.currentTimeMillis();
+//        public long currTime = System.currentTimeMillis();    //测试正常 私有属性可以被继承到JSON中
     }
 
     public int getRequestType() {
@@ -38,6 +40,14 @@ public abstract class BaseRequest<T> {
 
     public void setBaseParams(String params) {
         mParams = params;
+    }
+
+    public Map<String, String> getMapParams() {
+        return mMapParams;
+    }
+
+    public void setBaseMapParams(Map<String, String> mapParams) {
+        mMapParams = mapParams;
     }
 
     public Subscriber<T> getSubscriber() {

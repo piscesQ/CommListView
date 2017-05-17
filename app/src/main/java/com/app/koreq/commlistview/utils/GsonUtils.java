@@ -5,6 +5,8 @@ import com.app.koreq.commlistviewlib.bean.BaseListBean;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.HashMap;
+
 /**
  * project : CommListView
  * author : YanBin on 3/22/17
@@ -29,5 +31,16 @@ public class GsonUtils {
             gsonCustomInstance = builder.create();
         }
         return gsonCustomInstance;
+    }
+
+    public static void map2GsonTest(){
+        //======================== map 转 json 测试  start ========================================
+        HashMap<String, String> map = new HashMap<>();
+        map.put("data", "111");
+        map.put("data2", "222");
+        map.put("data3", "333");
+        String s = GsonUtils.getGson().toJson(map); //正常
+        //======================== map 转 json 测试  end   ========================================
+
     }
 }

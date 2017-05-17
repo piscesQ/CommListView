@@ -2,6 +2,7 @@ package com.app.koreq.commlistview.net.frame.bean;
 
 import com.app.koreq.commlistview.net.bean.TreeResult;
 import com.app.koreq.commlistview.utils.GsonUtils;
+import com.app.koreq.commlistview.utils.JSONUtils;
 import com.app.koreq.netlib.bean.BaseRequest;
 import com.app.koreq.netlib.http.HttpConstants;
 
@@ -41,12 +42,6 @@ public class TreePostRequest extends BaseRequest<TreeResult> {
 //        mChildParams.setData(data);
 
         String strParams = GsonUtils.getGson().toJson(mChildParams, Params.class);
-        HashMap<String, String> map = new HashMap<>();
-        map.put("data", "111");
-        map.put("data2", "222");
-        map.put("data3", "333");
-        String s = GsonUtils.getGson().toJson(map);
-
         //TODO kore test
         strParams = "{\"andid\":\"b80c1f46c3893a47\",\"banner_ratio_type\":\"1440x518\",\"brand\":\"google\",\"class_id\":202449672,\"connt\":\"WIFI\",\"count\":20,\"density\":\"3.5\",\"device\":\"Nexus 6P\",\"hwd\":\"google/angler/angler:7.0/NBD91K/3318877:user/release-keys\",\"imei\":\"86798102177694\",\"ip\":\"10.0.9.157\",\"is_public\":0,\"is_show\":1,\"mac\":\"02:00:00:00:00:00\",\"make\":\"Huawei\",\"myuser_id\":0,\"native_ratio_type\":\"1118x402\",\"os\":\"Android\",\"page\":1,\"school_id\":202032240,\"screenSize\":\"1440x2392\",\"type\":2,\"ua\":\"Mozilla/5.0 (Linux; Android 7.0; Nexus 6P Build/NBD91K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/51.0.2704.90 Mobile Safari/537.36\",\"uid\":\"b80c1f46c3893a47\",\"user_id\":212616083,\"child_id\":210565601,\"curr\":{\"child_id\":210565601,\"class_id\":202449672,\"school_id\":202032240,\"user_id\":212616083},\"data_ver\":35,\"device_no\":\"Nexus 6P\",\"mobile_system\":\"7.0\",\"platform\":2,\"school_app_type\":0,\"version_code\":120,\"version_no\":\"P_PRE_6.1.0\"}";
 

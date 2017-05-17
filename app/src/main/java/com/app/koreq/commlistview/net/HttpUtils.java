@@ -19,7 +19,6 @@ public class HttpUtils {
      * @return
      */
     public static String getHostByEnv(int env) {
-//        String host = "https://pro.zhihuishu.bbtree.com/service/v2/";    //TODO kore test
         String host = "https://pro.zhihuishu.bbtree.com/service/v2/";    //TODO kore test
 //        String host = "http://baike.baidu.com/";    //TODO kore test
         switch (env) {

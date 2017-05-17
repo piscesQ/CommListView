@@ -41,7 +41,7 @@ public class BaikeGetRequest extends BaseRequest<BaikeResult> {
         private String scope = "103";
         private String format = "json";
         private String appid = "379020";
-        private String bk_key = "%E9%87%91%E5%88%9A%E7%8B%BC";
+        private String bk_key = "金刚狼";     //%E9%87%91%E5%88%9A%E7%8B%BC
         private String bk_length = "600";
     }
 }

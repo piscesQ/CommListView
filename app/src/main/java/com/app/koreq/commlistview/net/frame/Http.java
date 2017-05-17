@@ -6,6 +6,7 @@ import com.app.koreq.commlistview.utils.AESUtils;
 import com.app.koreq.commlistview.utils.Config;
 import com.app.koreq.commlistview.utils.FileUtils;
 import com.app.koreq.commlistview.utils.GsonUtils;
+import com.app.koreq.commlistview.utils.JSONUtils;
 import com.app.koreq.netlib.bean.BaseRequest;
 import com.app.koreq.netlib.bean.HttpApiParams;
 import com.app.koreq.netlib.http.HttpApi;
@@ -39,6 +40,9 @@ public class Http {
     public static final int MAX_CACHE_TIME = 5 * 60;    //缓存时间
     public static final int HTTP_TIMEOUT = 15;  //请求超时
     public static final int HTTP_RW_TIMEOUT = 20;   //读写超时
+
+    public static final int PARAMS_TYPE_ORIGIN = 0;     //最原始的参数处理方式,也不加密
+    public static final int PARAMS_TYPE_TR = 1;         //参数加密后放入data内
 
     public static Retrofit getInstance() {
 
@@ -86,16 +90,44 @@ public class Http {
     }
 
     /**
+     * 以最原始的方式进行网络请求，同时参数也不加密
+     *
+     * @param request
+     */
+    public static void sendOriginRequest(BaseRequest request) {
+        sendRequest(request, PARAMS_TYPE_ORIGIN);
+    }
+
+    /**
+     * 将所有请求数据加密后放入data中，然后再封装一层后，再请求
+     *
+     * @param request
+     */
+    public static void sendTrRequest(BaseRequest request) {
+        sendRequest(request, PARAMS_TYPE_TR);
+    }
+
+    /**
      * Core method
      * 发送网络请求
      *
-     * @param request 请求和响应的处理类，包含Sbuscriber 和 反序列化的类型
+     * @param request    请求和响应的处理类，包含Sbuscriber 和 反序列化的类型
+     * @param paramsType 定义参数处理方式
      */
-    public static void sendRequest(BaseRequest request) {
+    private static void sendRequest(BaseRequest request, int paramsType) {
         Retrofit instance = getInstance();
         HttpApi httpApi = instance.create(HttpApi.class);
 
-        Map<String, String> params = dealMapParams(request.getParams(), request.isEncrypt());
+        Map<String, String> params = new HashMap<>();
+        switch (paramsType) {
+            case PARAMS_TYPE_ORIGIN:
+                params = dealParams2Map(request.getParams());
+                break;
+            case PARAMS_TYPE_TR:
+                params = dealMapParams(request.getParams(), request.isEncrypt());
+                break;
+        }
+
         Observable<Response<ResponseBody>> responseObservable = null;
 
         int method = request.getRequestType();
@@ -109,6 +141,7 @@ public class Http {
                 break;
 
             case HttpConstants.TYPE_POST_FORM:
+                responseObservable = postFormRequest(httpApi, request.getUrl(), params);
                 break;
 
             case HttpConstants.TYPE_DOWNLOAD:
@@ -130,11 +163,27 @@ public class Http {
         }
     }
 
-    public static Observable<Response<ResponseBody>> getRequest(HttpApi httpApi, String url, Map<String,String> params) {
+    /**
+     * 执行get请求 参数以Map形式传递
+     *
+     * @param httpApi
+     * @param url
+     * @param params
+     * @return
+     */
+    private static Observable<Response<ResponseBody>> getRequest(HttpApi httpApi, String url, Map<String, String> params) {
         return httpApi.getRequest(url, params);
     }
 
-    public static Observable<Response<ResponseBody>> postFormRequest(HttpApi httpApi, String url,  Map<String,String> params) {
+    /**
+     * 执行post请求 参数以Map形式传递 - 请求以表单提交
+     *
+     * @param httpApi
+     * @param url
+     * @param params
+     * @return
+     */
+    private static Observable<Response<ResponseBody>> postFormRequest(HttpApi httpApi, String url, Map<String, String> params) {
         return httpApi.postFormRequest(url, params);
     }
 
@@ -146,12 +195,12 @@ public class Http {
      * @param params
      * @return
      */
-    public static Observable<Response<ResponseBody>> postRequest(HttpApi httpApi, String url,  Map<String,String> params) {
+    private static Observable<Response<ResponseBody>> postRequest(HttpApi httpApi, String url, Map<String, String> params) {
         return httpApi.postRequest(url, params);
     }
 
     /**
-     * 参数封装、加密处理类
+     * 参数封装、加密处理类 - 只有post才支持传入对象做参数
      *
      * @param params
      * @param isEncrypt
@@ -162,7 +211,11 @@ public class Http {
 
         HttpApiParams apiParams = new HttpApiParams();
         apiParams.setData(params);
+
+        //=================================================
+        //TODO 公参
         apiParams.setUuid("b80c1f46c3893a47");
+        //=================================================
 
         return apiParams;
     }
@@ -186,6 +239,16 @@ public class Http {
         //==================================================
 
         return paramsMap;
+    }
+
+    /**
+     * 参数JSON 转成 map
+     *
+     * @param params
+     * @return 返回一个Map
+     */
+    private static Map<String, String> dealParams2Map(String params) {
+        return JSONUtils.json2Map(params);
     }
 
     /**

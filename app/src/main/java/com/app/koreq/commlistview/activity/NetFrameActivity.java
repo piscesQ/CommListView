@@ -62,14 +62,14 @@ public class NetFrameActivity extends AppCompatActivity implements View.OnClickL
         switch (id) {
             case R.id.net_http_get_map:    //点击 http get map 按钮
                 request = netGetDemo();
-                Http.sendRequest(request);
+                Http.sendOriginRequest(request);
                 break;
             case R.id.net_http_form_map:    //点击 http form map 按钮
                 break;
             case R.id.net_http_post_map:    //点击 http map 按钮
                 request = netPostDemo();
                 request.setRequestType(HttpConstants.TYPE_POST);
-                Http.sendRequest(request);
+                Http.sendTrRequest(request);
                 break;
         }
     }
