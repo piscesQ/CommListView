@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.app.koreq.commlistview.MainApplication;
+import commlistview.MainApplication;
 
 /**
  * project : CommListView

@@ -1,4 +1,4 @@
-package com.app.koreq.commlistview;
+package commlistview;
 
 import android.app.Application;
 import android.util.Log;

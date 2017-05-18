@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
-import com.app.koreq.commlistview.MainApplication;
+import commlistview.MainApplication;
 
 /**
  * project : CommListView

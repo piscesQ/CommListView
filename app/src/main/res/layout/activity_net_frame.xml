@@ -9,6 +9,37 @@
     >
 
     <LinearLayout
+        android:id="@+id/net_ll_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Http环境编号："
+            android:textSize="15sp"
+            />
+
+        <EditText
+            android:id="@+id/net_et_env"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/net_submit_env"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/net_ll_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

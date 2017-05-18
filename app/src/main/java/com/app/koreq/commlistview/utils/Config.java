@@ -1,6 +1,5 @@
 package com.app.koreq.commlistview.utils;
 
-import com.app.koreq.commlistview.MainApplication;
 import com.app.koreq.commlistview.R;
 
 /**

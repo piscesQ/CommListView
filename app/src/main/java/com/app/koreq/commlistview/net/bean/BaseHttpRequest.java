@@ -1,6 +1,6 @@
 package com.app.koreq.commlistview.net.bean;
 
-import com.app.koreq.commlistview.MainApplication;
+import commlistview.MainApplication;
 
 /**
  * project : CommListView
