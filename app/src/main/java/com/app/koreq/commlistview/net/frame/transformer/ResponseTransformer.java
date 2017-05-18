@@ -24,8 +24,8 @@ import rx.schedulers.Schedulers;
 public class ResponseTransformer<T> implements Observable.Transformer<T, T> {
     @Override
     public Observable<T> call(Observable<T> tObservable) {
-        return tObservable.compose(new SchedulerTransformer<>())
-                .compose(new ErrorTransformer<>());
+        return tObservable.compose(new SchedulerTransformer<T>())
+                .compose(new ErrorTransformer<T>());
     }
 }
 

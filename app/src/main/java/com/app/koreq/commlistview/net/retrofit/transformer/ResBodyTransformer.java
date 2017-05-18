@@ -22,7 +22,7 @@ import rx.functions.Func1;
 public class ResBodyTransformer<T> implements Observable.Transformer<T, ResponseBody> {
     @Override
     public Observable<ResponseBody> call(Observable<T> tObservable) {
-        return tObservable.compose(new SchedulerTransformer<>())    //线程切换
+        return tObservable.compose(new SchedulerTransformer<T>())    //线程切换
                 .compose(new ErrorBodyTransformer<T>());            //错误处理，并返回ResponseBody对象
     }
 }

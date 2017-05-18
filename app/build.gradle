@@ -1,3 +1,7 @@
+import org.aspectj.bridge.IMessage
+import org.aspectj.bridge.MessageHandler
+import org.aspectj.tools.ajc.Main
+
 apply plugin: 'com.android.application'
 
 android {
@@ -16,12 +20,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+
+
         //为了解决如下错误
         //Error:Jack is required to support java 8 language features. Either enable Jack or remove sourceCompatibility JavaVersion.VERSION_1_8.
-        jackOptions {    //Jack工具链 替代javac
-            enabled true
-            //参考链接：https://developer.android.com/guide/platform/j8-jack.html
-        }
+//        jackOptions {    //Jack工具链 替代javac
+//            enabled true
+//            //参考链接：https://developer.android.com/guide/platform/j8-jack.html
+//        }
+
+
 
         // 增加res 属性 相当于定义在string.xml中的属性
         resValue "string", "current_time", getTime()    //String测试  正常
@@ -49,8 +57,10 @@ android {
 
     //指定编译版本
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8   //支持 jack 编译的版本
+//        sourceCompatibility JavaVersion.VERSION_1_8   //支持 jack 编译的版本
+        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_7
     }
 }
 
@@ -75,11 +85,58 @@ dependencies {
     compile project(':commlistviewlib')
     compile project(':commwidgetlib')
     compile project(':netlib')
+    compile project(path: ':aop-lib')
 
     //    compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.code.gson:gson:2.8.0'
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'org.aspectj:aspectjrt:1.8.1'
     testCompile 'junit:junit:4.12'
+}
+
+
+
+final def log = project.logger
+final def variants = project.android.applicationVariants
+
+variants.all { variant ->
+    if (!variant.buildType.isDebuggable()) {
+        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
+        return;
+    }
+
+    JavaCompile javaCompile = variant.javaCompile
+    javaCompile.doLast {
+        String[] args = ["-showWeaveInfo",
+                         "-1.5",
+                         "-inpath", javaCompile.destinationDir.toString(),
+                         "-aspectpath", javaCompile.classpath.asPath,
+                         "-d", javaCompile.destinationDir.toString(),
+                         "-classpath", javaCompile.classpath.asPath,
+                         "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
+        log.debug "ajc args: " + Arrays.toString(args)
+
+        MessageHandler handler = new MessageHandler(true);
+        new Main().run(args, handler);
+        for (IMessage message : handler.getMessages(null, true)) {
+            switch (message.getKind()) {
+                case IMessage.ABORT:
+                case IMessage.ERROR:
+                case IMessage.FAIL:
+                    log.error message.message, message.thrown
+                    break;
+                case IMessage.WARNING:
+                    log.warn message.message, message.thrown
+                    break;
+                case IMessage.INFO:
+                    log.info message.message, message.thrown
+                    break;
+                case IMessage.DEBUG:
+                    log.debug message.message, message.thrown
+                    break;
+            }
+        }
+    }
 }

@@ -15,6 +15,7 @@ import java.io.IOException;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -105,16 +106,24 @@ public class RetrofitDemoUtils {
         baikeData
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        response -> {
-                            Log.d(TAG, "response.body() = " + response.body());
-                            Log.d(TAG, "demoBean.getDesc() = " + response.body().getDesc());
-                        }
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "getRxRequest throwable");
-                        }
-                        , () -> Log.d(TAG, "getRxRequest completed!"));
+                .subscribe(new Subscriber<Response<DemoBean>>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "getRxRequest completed!");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "getRxRequest throwable");
+                    }
+
+                    @Override
+                    public void onNext(Response<DemoBean> response) {
+                        Log.d(TAG, "response.body() = " + response.body());
+                        Log.d(TAG, "demoBean.getDesc() = " + response.body().getDesc());
+                    }
+                });
         return ret; //未使用
     }
 
@@ -135,12 +144,23 @@ public class RetrofitDemoUtils {
         baikeData
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(demoBean -> Log.d(TAG, "2-demoBean.getDesc() = " + demoBean.getDesc())
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "doGetRxRequest2 throwable");
-                        }
-                        , () -> Log.d(TAG, "doGetRxRequest2 completed!"));
+                .subscribe(new Subscriber<DemoBean>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "doGetRxRequest2 completed!");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "doGetRxRequest2 throwable");
+                    }
+
+                    @Override
+                    public void onNext(DemoBean demoBean) {
+                        Log.d(TAG, "2-demoBean.getDesc() = " + demoBean.getDesc());
+                    }
+                });
         return ret; //未使用
     }
 
@@ -162,18 +182,27 @@ public class RetrofitDemoUtils {
         Observable<ResponseBody> baikeJsonData = demoGetApi.getRxBaikeJsonData("openapi", "600");
         baikeJsonData.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(responseBody -> {
-                            try {
-                                Log.d(TAG, "responseBody = " + responseBody.string());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                .subscribe(new Subscriber<ResponseBody>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "doGetRxJsonRequest completed!");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "doGetRxJsonRequest throwable");
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        try {
+                            Log.d(TAG, "responseBody = " + responseBody.string());
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "doGetRxJsonRequest throwable");
-                        }
-                        , () -> Log.d(TAG, "doGetRxJsonRequest completed!"));
+                    }
+                });
         return ret;
     }
 
@@ -193,19 +222,28 @@ public class RetrofitDemoUtils {
         Observable<ResponseBody> listRxJsonData = demoPostApi.getListRxJsonData(request);
         listRxJsonData.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(responseBody -> {
-                            try {
-                                String decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, responseBody.string());
-                                Log.d(TAG, "postRxJsonResponse = " + decrypt);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                .subscribe(new Subscriber<ResponseBody>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "doPostRxJsonRequest completed");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "doPostRxJsonRequest throwable");
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        try {
+                            String decrypt = AESUtils.decryptFromTr(AESUtils.AESKey, responseBody.string());
+                            Log.d(TAG, "postRxJsonResponse = " + decrypt);
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "doPostRxJsonRequest throwable");
-                        }
-                        , () -> Log.d(TAG, "doPostRxJsonRequest completed"));
+                    }
+                });
 
         return ret;
     }
@@ -221,22 +259,31 @@ public class RetrofitDemoUtils {
 
         Observable<retrofit2.Response<ResponseBody>> listRxResData = demoPostApi.getListRxResData(request);
         listRxResData.compose(new StringTransformer<>())
-                .subscribe(result -> {
-                            try {
-                                String code = String.valueOf(result);
-                                Log.d(TAG, "post doRxResReq code = " + code);
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.d(TAG, "post doRxResReq completed");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "post doRxResReq throwable");
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        try {
+                            String code = String.valueOf(s);
+                            Log.d(TAG, "post doRxResReq code = " + code);
 
 //                                String decrypt = AESUtils.decryptFormTr(AESUtils.AESKey, responseBody.string());
 //                                Log.d(TAG, "post doRxResReq body = " + decrypt);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
                         }
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "post doRxResReq throwable");
-                        }
-                        , () -> Log.d(TAG, "post doRxResReq completed"));
+                    }
+                });
         return ret;
     }
 

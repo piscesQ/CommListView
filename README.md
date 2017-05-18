@@ -14,9 +14,34 @@ v4.0 日志统计 bug 统计框架（面向切面） <br/>
 
 
 
+### 目录结构
+```
+|-- activity            应用交互页面
+|-- aop                 面向切面编程(已删除，改成library实现)
+|-- base 
+|-- commlist            统一列表
+|-- gson                自定义Gson解析
+|-- net                 网络框架封装
+|-- rxjava              rxjava测试
+|-- test
+|-- utils               工具类
+|-- MainApplication     自定义Application类
 
+```
 
+### Charles 配置
+1、在`res`目录下增加`xml`目录，并添加文件：`network_security_config.xml`
+2、在AndroidManifest.xml文件中的application标签下增加属性`android:networkSecurityConfig="@xml/network_security_config"`
 
+注意：该方法只需要在sdk版本大于等于24才需要配置， 低版本没有`android:networkSecurityConfig="@xml/network_security_config"`属性
+
+### 网络框架
+具体参见对应包中的文档
+
+### AspectJ 配置
+1、Android 中的 AOP 编程 - github:`https://github.com/hehonghui/android-tech-frontier/blob/master/issue-22/Android%E4%B8%AD%E7%9A%84AOP%E7%BC%96%E7%A8%8B.md`
+2、Android 基于AOP监控之——AspectJ构建指南 ： `https://yq.aliyun.com/articles/58739`
+注意：1、不支持Jack工具链！！！！！！
 
 
 

@@ -113,7 +113,7 @@ public class Http {
      * @param request    请求和响应的处理类，包含Sbuscriber 和 反序列化的类型
      * @param paramsType 定义参数处理方式
      */
-    private static void sendRequest(BaseRequest request, int paramsType) {
+    private static void sendRequest(final BaseRequest request, int paramsType) {
         Retrofit instance = getInstance();
         HttpApi httpApi = instance.create(HttpApi.class);
 

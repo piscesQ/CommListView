@@ -180,29 +180,45 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
      */
     private void rxDemo4() {
         Observable<String> stringObservable = Observable
-                .create(subscriber -> {
-                    Log.d(TAG, "===" + subscriber.toString());
-                    subscriber.onNext("rxDemo3_1");     //onNext的作用感觉是"执行下一步"，而不是执行最后面subscribe()中的oNext方法
-                    subscriber.onNext("rxDemo3_2");
-                    subscriber.onNext("rxDemo3_3");
-                    subscriber.onNext("rxDemo3_4");
-                    subscriber.onNext("rxDemo3_5");
-
+                .create(new Observable.OnSubscribe<String>() {
+                    @Override
+                    public void call(Subscriber<? super String> subscriber) {
+                        Log.d(TAG, "===" + subscriber.toString());
+                        subscriber.onNext("rxDemo3_1");     //onNext的作用感觉是"执行下一步"，而不是执行最后面subscribe()中的oNext方法
+                        subscriber.onNext("rxDemo3_2");
+                        subscriber.onNext("rxDemo3_3");
+                        subscriber.onNext("rxDemo3_4");
+                        subscriber.onNext("rxDemo3_5");
+                    }
                 });
 
         stringObservable
-                .map(s -> "===" + s)        //此步正常执行
+                .map(new Func1<String, String>() {
+                    @Override
+                    public String call(String s) {
+                        return "===" + s;
+                    }
+                })        //此步正常执行
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        s -> {
-                            Log.d(TAG, "demo3 - onNext = " + s);
-                            mTvShow.setText(mTvShow.getText() + "; \n" + Thread.currentThread().getName() + "_" + s);
-                        }
-                        , throwable -> {
-                            throwable.printStackTrace();
-                            Log.d(TAG, "demo3 - throwable");
-                        });
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "demo3 - throwable");
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        Log.d(TAG, "demo3 - onNext = " + s);
+                        mTvShow.setText(mTvShow.getText() + "; \n" + Thread.currentThread().getName() + "_" + s);
+                    }
+                });
 
     }
 

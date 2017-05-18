@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.app.koreq.commlistview.activity.AopActivity"
+    tools:showIn="@layout/activity_aop"
+    >
+
+    <Button
+        android:id="@+id/aop_btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo 1"
+        />
+
+    <Button
+        android:id="@+id/aop_btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo 2"
+        />
+
+    <Button
+        android:id="@+id/aop_btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo 3"
+        />
+
+    <Button
+        android:id="@+id/aop_btn_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo 4"
+        />
+
+    <com.app.koreq.commlistview.view.MyLinearLayout
+        android:id="@+id/aop_ll_blue"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/blue_00eeee"
+        />
+
+    <com.app.koreq.commlistview.view.MyLinearLayout
+        android:id="@+id/aop_ll_red"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/red_ff9999"
+        />
+
+    <com.app.koreq.commlistview.view.MyLinearLayout
+        android:id="@+id/aop_ll_green"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/green_00aaaa"
+        />
+
+</LinearLayout>

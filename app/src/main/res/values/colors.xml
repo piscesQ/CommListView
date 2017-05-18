@@ -6,4 +6,6 @@
     <color name="gray_ee">#eeeeee</color>
     <color name="blue">#0000ff</color>
     <color name="blue_00eeee">#00eeee</color>
+    <color name="green_00aaaa">#00eeaa</color>
+    <color name="red_ff9999">#ff9999</color>
 </resources>
