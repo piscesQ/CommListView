@@ -43,17 +43,30 @@ public class Http {
     public static final int PARAMS_TYPE_ORIGIN = 0;     //最原始的参数处理方式,也不加密
     public static final int PARAMS_TYPE_TR = 1;         //参数加密后放入data内
 
+    /**
+     * 获取单例对象
+     *
+     * @return
+     */
     public static Retrofit getInstance() {
-
         if (mRetrofitIns == null) {
-            mRetrofitIns = new Retrofit.Builder()
-                    .client(initOkHttpClient())
-                    .baseUrl(HttpUtils.getHostByEnv())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .build();
+           forceInitInstance();
         }
         return mRetrofitIns;
+    }
+
+    /**
+     * 强制初始化一次 mRetrofitIns 对象
+     *
+     * @return
+     */
+    public static void forceInitInstance(){
+        mRetrofitIns = new Retrofit.Builder()
+                .client(initOkHttpClient())
+                .baseUrl(HttpUtils.getHostByEnv())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
     }
 
     private static OkHttpClient initOkHttpClient() {

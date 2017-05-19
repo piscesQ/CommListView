@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.koreq.commlib.utils.CommSharePreference;
 import com.app.koreq.commlistview.R;
@@ -78,6 +79,8 @@ public class NetFrameActivity extends AppCompatActivity implements View.OnClickL
                     e.printStackTrace();
                 }
                 CommSharePreference.getInstance().putValue(CommSharePreference.DEFAULT_USER, HttpUtils.ENV_KEY, env);
+                Http.forceInitInstance();   //强制初始化对象
+                Toast.makeText(this, "环境更改成功", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.net_http_get_map:    //点击 http get map 按钮
                 request = netGetDemo();
