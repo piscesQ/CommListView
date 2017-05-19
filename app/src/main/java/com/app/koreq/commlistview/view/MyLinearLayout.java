@@ -9,7 +9,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-import com.app.koreq.aop.annotation.DebugTrace;
+import com.app.koreq.aop.aspectj.annotation.DebugTrace;
 
 
 /**

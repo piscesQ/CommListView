@@ -1,4 +1,4 @@
-package com.app.koreq.aop.internal;
+package com.app.koreq.aop.aspectj.internal;
 
 import android.util.Log;
 

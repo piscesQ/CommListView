@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.app.koreq.aop.internal.DebugLog;
-import com.app.koreq.aop.annotation.DebugTrace;
+import com.app.koreq.aop.aspectj.internal.DebugLog;
+import com.app.koreq.aop.aspectj.annotation.DebugTrace;
 import com.app.koreq.commlistview.R;
 
 /**

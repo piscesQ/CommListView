@@ -1,4 +1,4 @@
-package com.app.koreq.aop.aspect;
+package com.app.koreq.aop.aspectj.aspect;
 
 /**
  * project : CommListView
@@ -6,9 +6,8 @@ package com.app.koreq.aop.aspect;
  * version : v
  * description :
  */
-
-import com.app.koreq.aop.internal.DebugLog;
-import com.app.koreq.aop.internal.StopWatch;
+import com.app.koreq.aop.aspectj.internal.DebugLog;
+import com.app.koreq.aop.aspectj.internal.StopWatch;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -23,10 +22,10 @@ import org.aspectj.lang.reflect.MethodSignature;
 public class TraceAspect {
 
     private static final String POINTCUT_METHOD =
-            "execution(@com.app.koreq.aop.annotation.DebugTrace * *(..))";
+            "execution(@com.app.koreq.aop.aspectj.annotation.DebugTrace * *(..))";
 
     private static final String POINTCUT_CONSTRUCTOR =
-            "execution(@com.app.koreq.aop.annotation.DebugTrace *.new(..))";
+            "execution(@com.app.koreq.aop.aspectj.annotation.DebugTrace *.new(..))";
 
     @Pointcut(POINTCUT_METHOD)
     public void methodAnnotatedWithDebugTrace() {
