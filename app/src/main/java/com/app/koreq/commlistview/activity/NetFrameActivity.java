@@ -112,13 +112,13 @@ public class NetFrameActivity extends AppCompatActivity implements View.OnClickL
             public void onError(Throwable e) {
                 e.printStackTrace();
                 Log.d(HttpConstant.TAG, " netPostDemo - onError");
-                showInfo(" netPostDemo - onError" + e.getMessage());
+                showInfo(" netPostDemo - onError :" + e.getMessage());
             }
 
             @Override
             public void onNext(TreeResult demoResult) {
                 Log.d(HttpConstant.TAG, String.valueOf(demoResult.getTotal_number()));
-                showInfo(" netPostDemo - onError" + String.valueOf(demoResult.getTotal_number()));
+                showInfo(" netPostDemo - onNext : " + String.valueOf(demoResult.getTotal_number()));
             }
         };
 
@@ -144,13 +144,13 @@ public class NetFrameActivity extends AppCompatActivity implements View.OnClickL
             public void onError(Throwable e) {
                 e.printStackTrace();
                 Log.d(HttpConstant.TAG, " netGetDemo - onError");
-                showInfo(" netGetDemo - onError" + e.getMessage());
+                showInfo(" netGetDemo - onError :" + e.getMessage());
             }
 
             @Override
             public void onNext(BaikeResult baikeResult) {
                 Log.d(HttpConstant.TAG, baikeResult.getKey() + "_" + baikeResult.getDesc());
-                showInfo(" netGetDemo - onNext" + baikeResult.getKey() + "_" + baikeResult.getDesc());
+                showInfo(" netGetDemo - onNext :" + baikeResult.getKey() + "_" + baikeResult.getDesc());
             }
         });
 
@@ -164,7 +164,7 @@ public class NetFrameActivity extends AppCompatActivity implements View.OnClickL
 
     private void showAppendInfo(String info) {
         String oldText = mTvShow.getText().toString();
-        String showText = oldText + "网络返回 ： " + info;
+        String showText = oldText + "\n网络返回 ： " + info;
         mTvShow.setText(showText);
     }
 }
