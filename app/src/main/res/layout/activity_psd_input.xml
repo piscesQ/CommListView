@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app.koreq.commlistview.activity.widget.PsdInputActivity"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="密码输入框"
+        android:textSize="18sp"
+        />
+
+    <com.app.koreq.commwidgetlib.PayPwdEditText
+        android:id="@+id/et_psd_input"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:payBgDrawable="@drawable/bg_radius_16"
+        app:payPwdColor="#9999dd"
+        app:payPwdLength="6"
+        app:payPwdSize="15sp"
+        app:paySplitLineColor="#00ffff"
+        app:paySplitLineWidth="1px"
+        />
+
+</LinearLayout>

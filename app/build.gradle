@@ -20,16 +20,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-
-
         //为了解决如下错误
         //Error:Jack is required to support java 8 language features. Either enable Jack or remove sourceCompatibility JavaVersion.VERSION_1_8.
 //        jackOptions {    //Jack工具链 替代javac
 //            enabled true
 //            //参考链接：https://developer.android.com/guide/platform/j8-jack.html
 //        }
-
-
 
         // 增加res 属性 相当于定义在string.xml中的属性
         resValue "string", "current_time", getTime()    //String测试  正常

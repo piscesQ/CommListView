@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PayPwdEditText">
+        <attr name="payBgDrawable" format="reference" />
+        <attr name="payPwdLength" format="integer" />
+        <attr name="paySplitLineWidth" format="dimension" />
+        <attr name="paySplitLineColor" format="color" />
+        <attr name="payPwdColor" format="color" />
+        <attr name="payPwdSize" format="dimension" />
+    </declare-styleable>
+</resources>
