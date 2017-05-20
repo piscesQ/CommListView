@@ -10,7 +10,7 @@ import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.commlist.adapter.CommListAdapter;
 import com.app.koreq.commlistview.utils.GsonUtils;
 import com.app.koreq.commlistviewlib.bean.BaseListBean;
-import com.app.koreq.commwidgetlib.PairScrollView;
+import com.app.koreq.commwidgetlib.PairScorllWidget.PairScrollView;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;

@@ -1,4 +1,4 @@
-package com.app.koreq.aop.aspectj.internal;
+package com.app.koreq.aop.aspectj.configdemo;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,26 +1,29 @@
-package com.app.koreq.commwidgetlib;
+package com.app.koreq.commwidgetlib.PairScorllWidget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
-import android.widget.ListView;
 
-public class CPairSecondListView extends FrameLayout {
-    private ListView mListView;
+public class CPairFirstListView extends FrameLayout {
+    private WebView mWebView;
 
-    public CPairSecondListView(Context context) {
+    public CPairFirstListView(Context context) {
         super(context);
+        init(context);
     }
 
-    public CPairSecondListView(Context context, AttributeSet attrs) {
+    public CPairFirstListView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init(context);
     }
 
-    public CPairSecondListView(Context context, AttributeSet attrs, int defStyle) {
+    public CPairFirstListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        init(context);
     }
 
     public void init(Context _context) {
@@ -31,16 +34,16 @@ public class CPairSecondListView extends FrameLayout {
     @Override
     public boolean canScrollVertically(int direction) {
         setmListView();
-        return mListView.canScrollVertically(direction);
+        return mWebView.canScrollVertically(direction);
     }
 
     private void setmListView() {
-        if (mListView == null) {
+        if (mWebView == null) {
             int count = getChildCount();
             for (int i = 0; i < count; i++) {
                 View v = getChildAt(i);
-                if (v instanceof ListView) {
-                    mListView = (ListView) v;
+                if (v instanceof WebView) {
+                    mWebView = (WebView) v;
                 }
             }
         }

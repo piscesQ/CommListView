@@ -7,13 +7,13 @@
     tools:context="com.app.koreq.commlistview.activity.widget.PairScrollAct"
     >
 
-    <com.app.koreq.commwidgetlib.PairScrollView
+    <com.app.koreq.commwidgetlib.PairScorllWidget.PairScrollView
         android:id="@+id/pair_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
-        <com.app.koreq.commwidgetlib.CPairFirstListView
+        <com.app.koreq.commwidgetlib.PairScorllWidget.CPairFirstListView
             android:id="@+id/pair_first"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,9 +27,9 @@
                 android:textSize="18sp"
                 />
 
-        </com.app.koreq.commwidgetlib.CPairFirstListView>
+        </com.app.koreq.commwidgetlib.PairScorllWidget.CPairFirstListView>
 
-        <com.app.koreq.commwidgetlib.CPairSecondListView
+        <com.app.koreq.commwidgetlib.PairScorllWidget.CPairSecondListView
             android:id="@+id/pair_second"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,7 +41,7 @@
                 android:layout_height="match_parent"
                 />
 
-        </com.app.koreq.commwidgetlib.CPairSecondListView>
-    </com.app.koreq.commwidgetlib.PairScrollView>
+        </com.app.koreq.commwidgetlib.PairScorllWidget.CPairSecondListView>
+    </com.app.koreq.commwidgetlib.PairScorllWidget.PairScrollView>
 
 </LinearLayout>

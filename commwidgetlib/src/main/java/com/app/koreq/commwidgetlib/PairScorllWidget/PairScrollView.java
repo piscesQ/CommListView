@@ -1,4 +1,4 @@
-package com.app.koreq.commwidgetlib;
+package com.app.koreq.commwidgetlib.PairScorllWidget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
