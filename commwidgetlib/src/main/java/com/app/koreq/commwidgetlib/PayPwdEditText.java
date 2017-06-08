@@ -50,14 +50,16 @@ public class PayPwdEditText extends RelativeLayout {
         super(context, attrs, defStyleAttr);
         this.context = context;
 
+        //获取xml中的属性 得到的全是值单位是 像素
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.PayPwdEditText);
         int bgDrawable = typedArray.getResourceId(R.styleable.PayPwdEditText_payBgDrawable, 0);   //正常
-        int pwdLength = typedArray.getInt(R.styleable.PayPwdEditText_payPwdLength, 0);   //正常
-        float splitLineWid = typedArray.getDimension(R.styleable.PayPwdEditText_paySplitLineWidth, DensityUtils.dip2px(context, 0));   //正常
+        int pwdLength = typedArray.getInt(R.styleable.PayPwdEditText_payPwdLength, 6);   //正常
+        float splitLineWid = typedArray.getDimension(R.styleable.PayPwdEditText_paySplitLineWidth, 0);   //正常
         int splitLineColor = typedArray.getColor(R.styleable.PayPwdEditText_paySplitLineColor, Color.YELLOW);   //正常
         int pwdColor = typedArray.getColor(R.styleable.PayPwdEditText_payPwdColor, Color.BLUE);   //正常
-        int pwdSize = (int)typedArray.getDimension(R.styleable.PayPwdEditText_payPwdSize, DensityUtils.dip2px(context, 5));   //正常
-        typedArray.recycle();
+        int pwdSize = (int) typedArray.getDimension(R.styleable.PayPwdEditText_payPwdSize, DensityUtils.dip2px(context, 15));   //正常
+        typedArray.recycle();   //需要回收
+
         initStyle(bgDrawable, pwdLength, splitLineWid, splitLineColor, pwdColor, pwdSize);
     }
 
@@ -138,17 +140,31 @@ public class PayPwdEditText extends RelativeLayout {
         params.weight = 1;
         params.gravity = Gravity.CENTER;
 
-        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(dip2px(context, slpilinewidth), LayoutParams.MATCH_PARENT);
+        LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams((int) slpilinewidth, LayoutParams.MATCH_PARENT);
         for (int i = 0; i < textViews.length; i++) {
             final int index = i;
             TextView textView = new TextView(context);
             textView.setGravity(Gravity.CENTER);
             textViews[i] = textView;
-            textViews[i].setTextSize(pwdsize);
+            textViews[i].setTextSize(DensityUtils.px2dip(context, pwdsize));
             textViews[i].setTextColor(pwdcolor);
             textViews[i].setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD | InputType.TYPE_CLASS_NUMBER);
-            linearLayout.addView(textView, params);
 
+            LinearLayout llText = new LinearLayout(context);
+            llText.setOrientation(LinearLayout.VERTICAL);
+
+            LinearLayout.LayoutParams paramsTv = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0);
+            paramsTv.weight = 1;
+            llText.addView(textView, paramsTv);
+
+            LinearLayout.LayoutParams paramsLine = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 1);
+            paramsLine.leftMargin = DensityUtils.dip2px(context, 12);
+            paramsLine.rightMargin = DensityUtils.dip2px(context, 12);
+            View underline = new View(context);
+            underline.setBackgroundColor(Color.RED);
+            llText.addView(underline, paramsLine);
+
+            linearLayout.addView(llText, params);
 
             if (i < textViews.length - 1) {
                 View view = new View(context);
