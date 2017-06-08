@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black_333333">#333333</color>
+    <!--
+            红 + 绿 = 黄
+            红 + 蓝 = 品红
+            绿 + 蓝 = 天蓝
+    -->
     <color name="gray_666666">#666666</color>
-    <color name="gray_eeeeee">#eeeeee</color>
     <color name="transparent">#00000000</color>
     <color name="green_00ee99">#00ee99</color>
     <color name="gray_999999">#999999</color>
+    <color name="gray_ee">#eeeeee</color>
+    <color name="blue">#0000ff</color>
+    <color name="blue_00eeee">#00eeee</color>
+    <color name="green_00aaaa">#00eeaa</color>
+    <color name="red_ff9999">#ff9999</color>
+    <color name="orange_ffaa55">#99ffaa55</color>
+    <color name="white">#ffffff</color>
+    <color name="black_333333">#333333</color>
+    <color name="gray_eeeeee">#eeeeee</color>
+    <color name="yellow">#ffff00</color>
+    <color name="green_11dd99">#11dd99</color>
 </resources>
