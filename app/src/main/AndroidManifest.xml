@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".activity.widget.PsdInputActivity">
         </activity>
+        <activity android:name=".activity.widget.PopWinActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.activity.widget.PairScrollAct;
+import com.app.koreq.commlistview.activity.widget.PopWinActivity;
 import com.app.koreq.commlistview.activity.widget.PsdInputActivity;
 
 /**
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnTreeDecrypt = (Button) findViewById(R.id.btn_tree_decrypt);
         Button btnAop = (Button) findViewById(R.id.btn_aop);
         Button btnPsd = (Button) findViewById(R.id.btn_psd);
+        Button btnPopWin = (Button) findViewById(R.id.btn_pop_window);
 
         btnCommList.setOnClickListener(this);
         btnHttpTest.setOnClickListener(this);
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnTreeDecrypt.setOnClickListener(this);
         btnAop.setOnClickListener(this);
         btnPsd.setOnClickListener(this);
+        btnPopWin.setOnClickListener(this);
     }
 
     private void initData() {
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_psd:    //仿支付宝支付密码输入框
                 PsdInputActivity.launchAct(this);
+                break;
+            case R.id.btn_pop_window:    //PopupWindow
+                PopWinActivity.launchAct(this);
                 break;
         }
     }

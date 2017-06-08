@@ -7,84 +7,115 @@
     tools:context="com.app.koreq.commlistview.activity.MainActivity"
     >
 
-
-    <RelativeLayout
-
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         >
 
-        <Button
-            android:id="@+id/btn_comm_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CommList"
-            />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue_00eeee"
+            >
 
-        <Button
-            android:id="@+id/btn_http_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_comm_list"
-            android:text="Http Test"
-            />
+            <Button
+                android:id="@+id/btn_comm_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CommList"
+                />
 
-        <Button
-            android:id="@+id/btn_pairview_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_http_test"
-            android:text="Pair View Test"
-            />
+            <Button
+                android:id="@+id/btn_http_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_comm_list"
+                android:text="Http Test"
+                />
 
-        <Button
-            android:id="@+id/btn_rxjava_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_pairview_test"
-            android:text="Rxjava Test"
-            />
+            <Button
+                android:id="@+id/btn_pairview_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_http_test"
+                android:text="Pair View Test"
+                />
 
-        <Button
-            android:id="@+id/btn_gradle_str_test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_rxjava_test"
-            android:text="Gradle Res Str"
-            />
+            <Button
+                android:id="@+id/btn_rxjava_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_pairview_test"
+                android:text="Rxjava Test"
+                />
 
-        <Button
-            android:id="@+id/btn_net_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_gradle_str_test"
-            android:text="Net Frame Demo"
-            />
+            <Button
+                android:id="@+id/btn_gradle_str_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_rxjava_test"
+                android:text="Gradle Res Str"
+                />
 
-        <Button
-            android:id="@+id/btn_tree_decrypt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_net_frame"
-            android:text="-- Tree Decrypt"
-            />
+            <Button
+                android:id="@+id/btn_net_frame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_gradle_str_test"
+                android:text="Net Frame Demo"
+                />
 
-        <Button
-            android:id="@+id/btn_aop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_tree_decrypt"
-            android:text="AOP"
-            />
+            <Button
+                android:id="@+id/btn_tree_decrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_net_frame"
+                android:text="-- Tree Decrypt"
+                />
 
-        <Button
-            android:id="@+id/btn_psd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_aop"
-            android:text="仿支付宝密码输入框"
-            />
+            <Button
+                android:id="@+id/btn_aop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_tree_decrypt"
+                android:text="AOP"
+                />
 
-    </RelativeLayout>
+            <Button
+                android:id="@+id/btn_psd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_aop"
+                android:text="仿支付宝密码输入框"
+                />
+
+            <Button
+                android:id="@+id/btn_pop_window"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_psd"
+                android:text="PopWindow、倒计时、Dialog"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/red_ff9999"
+            >
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green_00aaaa"
+            >
+
+        </RelativeLayout>
+    </LinearLayout>
 </ScrollView>

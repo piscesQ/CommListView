@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app.koreq.commlistview.activity.widget.PopWinActivity"
+    >
+
+    <Button
+        android:id="@+id/pop_win_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BasePopWindow Demo"
+        />
+
+
+    <Button
+        android:id="@+id/btn_timer_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:background="@color/green_11dd99"
+        android:padding="10dp"
+        android:text="倒计时开始"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/btn_dialog_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/green_11dd99"
+        android:padding="10dp"
+        android:text="单按钮Dialog"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/btn_dialog_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/green_11dd99"
+        android:padding="10dp"
+        android:text="双按钮Dialog"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+
+</LinearLayout>
