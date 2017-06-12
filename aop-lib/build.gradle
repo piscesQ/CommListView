@@ -33,6 +33,7 @@ dependencies {
     })
     compile 'org.aspectj:aspectjrt:1.8.1'
     testCompile 'junit:junit:4.12'
+    compile project(path: ':commwidgetlib')
 }
 
 //必须使用 AspectJ 的编译器（ajc，一个java编译器的扩展）对所有受 aspect 影响的类进行织入

@@ -44,11 +44,14 @@ v4.0 日志统计 bug 统计框架（面向切面） <br/>
 2、Android 基于AOP监控之——AspectJ构建指南 ： `https://yq.aliyun.com/articles/58739` <br/>
 **注意：** 1、不支持Jack工具链！！！！！！ <br/>
 
-##### AspectJ 教程
+##### AOP 教程
 1、看AspectJ在Android中的强势插入：`http://blog.csdn.net/eclipsexys/article/details/54425414` <br/>
 2、深入理解Android之AOP：`http://blog.csdn.net/innost/article/details/49387395` <br/>
-3、：`` <br/>
-4、：`` <br/>
+3、AOP 之 AspectJ 全面剖析 in Android：`http://www.jianshu.com/p/f90e04bcb326` <br/>
+4、安卓 AOP 三剑客: APT,AspectJ,Javassist：`https://juejin.im/entry/581aec732e958a0054d08213` <br/>
+
+### AspectJ心得
+1、可以使用handler监控try...catch()中的异常；可以使用AfterThrowing来监控未处理的异常，可做bug日志收集！！！
 
 **参考链接：** <br/>
 |- `http://www.eclipse.org/aspectj/`   <=AspectJ官方网站 <br/>
