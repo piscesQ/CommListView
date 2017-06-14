@@ -11,7 +11,7 @@ v3.0 增加网络框架 rxJava + okHttp <br/>
 |-- v3.1 git pull 和 git fetch 试验 <br/>
 
 v4.0 日志统计 bug 统计框架（面向切面） <br/>
-|-- Dexposed 等面向切面的框架
+|-- Dexposed （不再更新维护）
 
 
 
