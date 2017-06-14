@@ -19,13 +19,14 @@ import org.aspectj.lang.reflect.SourceLocation;
  * project : CommListView
  * author : YanBin on 6/8/17
  * version : v4.0
- * description :
+ * description : 直接针对JoinPoint的选择 execution call get set staticinitialization handler initialization
+ *                                      preinitialization adviceexecution
  */
 @Aspect
 public class AspectApiDemo {
 
     //====================================分割线=====================================================
-    // withincode test
+    // withincode test   不要单独使用，若单独使用则JPoint对应的方法里面每执行一行代码，所有advice都执行一遍！！！
     public static final String POINT_WITHINCODE = "withincode(* com.app.koreq.commlistview.activity.AopActivity.apiWithincode1(..))";
 
     @Pointcut(POINT_WITHINCODE)
@@ -326,7 +327,7 @@ public class AspectApiDemo {
     }
 
     //====================================分割线=====================================================
-    // Around test
+    // Around test 修改参数列表
     public static final String POINT_AROUND_TEST = "execution(* com.app.koreq.commlistview.activity.AopActivity.aroundTest(..))";
 
     @Pointcut(POINT_AROUND_TEST)

@@ -68,6 +68,15 @@ public class AopActivity extends AppCompatActivity implements View.OnClickListen
         Button btn10 = (Button) findViewById(R.id.aop_btn_10);
         Button btn11 = (Button) findViewById(R.id.aop_btn_11);
 
+        Button btn12 = (Button) findViewById(R.id.aop_btn_12);
+        Button btn13 = (Button) findViewById(R.id.aop_btn_13);
+        Button btn14 = (Button) findViewById(R.id.aop_btn_14);
+        Button btn15 = (Button) findViewById(R.id.aop_btn_15);
+        Button btn16 = (Button) findViewById(R.id.aop_btn_16);
+        Button btn17 = (Button) findViewById(R.id.aop_btn_17);
+        Button btn18 = (Button) findViewById(R.id.aop_btn_18);
+
+
         LinearLayout llBlue = (LinearLayout) findViewById(R.id.aop_ll_blue);
         llBlue.invalidate();
 
@@ -82,6 +91,14 @@ public class AopActivity extends AppCompatActivity implements View.OnClickListen
         btn9.setOnClickListener(this);
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
+
+        btn12.setOnClickListener(this);
+        btn13.setOnClickListener(this);
+        btn14.setOnClickListener(this);
+        btn15.setOnClickListener(this);
+        btn16.setOnClickListener(this);
+        btn17.setOnClickListener(this);
+        btn18.setOnClickListener(this);
     }
 
     private void initData() {
@@ -127,6 +144,30 @@ public class AopActivity extends AppCompatActivity implements View.OnClickListen
                 aroundTest();
                 aroundTest("KoreAround", 888, 233f);
                 break;
+
+            //=========================================================================
+
+            case R.id.aop_btn_12:
+                apiWithin1(2333333);
+                break;
+            case R.id.aop_btn_13:
+                apiWithincode2();
+                break;
+            case R.id.aop_btn_14:
+                cflowDemo();
+                break;
+            case R.id.aop_btn_15:
+                cflowbelowDemo();
+                break;
+            case R.id.aop_btn_16:
+                apiDemo2();
+                break;
+            case R.id.aop_btn_17:
+                apiDemo2();
+                break;
+            case R.id.aop_btn_18:
+                apiDemo2(6666666);
+                break;
         }
     }
 
@@ -136,7 +177,9 @@ public class AopActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     private void apiWithincode1() {
-        DebugLog.log(AopConst.LOG_TAG, "apiWithincode1");
+        DebugLog.log(AopConst.LOG_TAG, "apiWithincode1 - 1");
+        DebugLog.log(AopConst.LOG_TAG, "apiWithincode1 - 2");
+        DebugLog.log(AopConst.LOG_TAG, "apiWithincode1 - 3");
     }
 
     private void constructorTest() {
@@ -186,5 +229,31 @@ public class AopActivity extends AppCompatActivity implements View.OnClickListen
 
     private void aroundTest(String str, int number, float money) {
         DebugLog.log(AopConst.LOG_TAG, "== aroundTest(String, int, float) ==" + str + "、" + number + "、" + money);
+    }
+
+    public void apiDemo2() {
+        DebugLog.log(AopConst.LOG_TAG, "== apiDemo2() ==");
+    }
+
+    public void apiDemo2(int num) {
+        DebugLog.log(AopConst.LOG_TAG, "== apiDemo2(int) == num " + num);
+    }
+
+    private void apiWithincode2() {
+        DebugLog.log(AopConst.LOG_TAG, "== apiWithincode2() ==");
+        apiDemo2();
+    }
+
+    private void apiWithin1(int num) {
+        DebugLog.log(AopConst.LOG_TAG, "== apiWithin1(int) == " + num);
+        apiDemo2();
+    }
+
+    private void cflowDemo() {
+        apiDemo2();
+    }
+
+    private void cflowbelowDemo() {
+        apiDemo2();
     }
 }

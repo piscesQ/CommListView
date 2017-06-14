@@ -54,7 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initData() {
-
+        AopActivity aopActivity = new AopActivity();
+        aopActivity.apiDemo2();
+        Toast.makeText(this, "已经成功调用 aopActivity.apiDemo2()", Toast.LENGTH_SHORT).show();
     }
 
     @Override
