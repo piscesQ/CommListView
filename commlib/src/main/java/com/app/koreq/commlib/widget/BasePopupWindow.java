@@ -11,6 +11,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.PopupWindow;
 
+import com.app.koreq.commlib.R;
+
 /**
  * author : YanBin on 5/27/17
  * version : v4.0

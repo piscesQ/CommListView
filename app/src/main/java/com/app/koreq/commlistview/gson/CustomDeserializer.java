@@ -4,7 +4,7 @@ import com.app.koreq.commlistview.commlist.bean.OneImageListBean;
 import com.app.koreq.commlistview.commlist.bean.TextListBean;
 import com.app.koreq.commlistview.utils.GsonUtils;
 import com.app.koreq.commlistview.utils.ListConstant;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;

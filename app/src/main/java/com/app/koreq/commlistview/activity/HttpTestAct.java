@@ -147,9 +147,9 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
     }
 
     private void sendRetrofitGetRequest() {
-        RetrofitDemoUtils.doGetRequest(new retrofit2.Callback<DemoBean>() {
+        RetrofitDemoUtils.doGetRequest(new retrofit2_source.Callback<DemoBean>() {
             @Override
-            public void onResponse(retrofit2.Call<DemoBean> call, retrofit2.Response<DemoBean> response) {
+            public void onResponse(retrofit2_source.Call<DemoBean> call, retrofit2_source.Response<DemoBean> response) {
                 DemoBean demoBean = response.body();
                 Log.d(TAG, "response = " + demoBean.toString());
                 //在UI线程中
@@ -157,7 +157,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
             }
 
             @Override
-            public void onFailure(retrofit2.Call<DemoBean> call, Throwable t) {
+            public void onFailure(retrofit2_source.Call<DemoBean> call, Throwable t) {
                 Log.d(TAG, "call isCanceled = " + call.isCanceled());
                 Log.d(TAG, "response = " + t.toString());
             }
@@ -165,9 +165,9 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
     }
 
     private void sendRetrofitPostRequest() {
-        RetrofitDemoUtils.doPostRequest(new retrofit2.Callback<DemoListBean>() {
+        RetrofitDemoUtils.doPostRequest(new retrofit2_source.Callback<DemoListBean>() {
             @Override
-            public void onResponse(retrofit2.Call<DemoListBean> call, retrofit2.Response<DemoListBean> response) {
+            public void onResponse(retrofit2_source.Call<DemoListBean> call, retrofit2_source.Response<DemoListBean> response) {
                 DemoListBean demoBean = response.body();
                 Log.d(TAG, "response = " + demoBean.toString());
                 //在UI线程中
@@ -175,7 +175,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
             }
 
             @Override
-            public void onFailure(retrofit2.Call<DemoListBean> call, Throwable t) {
+            public void onFailure(retrofit2_source.Call<DemoListBean> call, Throwable t) {
                 Log.d(TAG, "call isCanceled = " + call.isCanceled());
                 Log.d(TAG, "response = " + t.toString());
             }
@@ -184,9 +184,9 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
 
     // 发送retrofit请求，并获得返回的json
     private void sendRetrofitPostJsonRequest() {
-        RetrofitDemoUtils.doPostJsonRequest(new retrofit2.Callback<ResponseBody>() {
+        RetrofitDemoUtils.doPostJsonRequest(new retrofit2_source.Callback<ResponseBody>() {
             @Override
-            public void onResponse(retrofit2.Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
+            public void onResponse(retrofit2_source.Call<ResponseBody> call, retrofit2_source.Response<ResponseBody> response) {
                 ResponseBody responseBody = response.body();
                 String string = null;
                 try {
@@ -215,7 +215,7 @@ public class HttpTestAct extends AppCompatActivity implements View.OnClickListen
             }
 
             @Override
-            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
+            public void onFailure(retrofit2_source.Call<ResponseBody> call, Throwable t) {
                 Log.d(TAG, "call isCanceled = " + call.isCanceled());
                 Log.d(TAG, "response = " + t.toString());
             }

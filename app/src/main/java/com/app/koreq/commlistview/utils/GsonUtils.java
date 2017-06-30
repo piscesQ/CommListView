@@ -1,7 +1,7 @@
 package com.app.koreq.commlistview.utils;
 
 import com.app.koreq.commlistview.gson.CustomDeserializer;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

@@ -4,12 +4,10 @@ import com.app.koreq.commlistview.net.bean.DemoListBean;
 import com.app.koreq.commlistview.net.bean.DemoRequest;
 
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.POST;
+import retrofit2_source.Call;
+import retrofit2_source.Response;
+import retrofit2_source.http.Body;
+import retrofit2_source.http.POST;
 import rx.Observable;
 
 /**

@@ -3,11 +3,11 @@ package com.app.koreq.commlistview.net.retrofit;
 import com.app.koreq.commlistview.net.bean.DemoBean;
 
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
+import retrofit2_source.Call;
+import retrofit2_source.Response;
+import retrofit2_source.http.GET;
+import retrofit2_source.http.Path;
+import retrofit2_source.http.Query;
 import rx.Observable;
 
 /**

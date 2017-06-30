@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.app.koreq.commlib.R;
 import com.app.koreq.commlib.utils.DensityUtils;
 
 /**

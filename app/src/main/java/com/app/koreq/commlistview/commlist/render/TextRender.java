@@ -6,8 +6,8 @@ import android.widget.TextView;
 
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.commlist.bean.TextListBean;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
-import com.app.koreq.commlistviewlib.render.BaseListRender;
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
+import com.app.koreq.commlib.commlist.render.BaseListRender;
 
 /**
  * project : CommListView

@@ -13,12 +13,12 @@ import com.app.koreq.commlistview.utils.GsonUtils;
 import java.io.IOException;
 
 import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2_source.Call;
+import retrofit2_source.Callback;
+import retrofit2_source.Response;
+import retrofit2_source.Retrofit;
+import retrofit2_source.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2_source.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -102,7 +102,7 @@ public class RetrofitDemoUtils {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())   //重要采用rxjava格式的adapter
                 .build();
         DemoGetApi demoGetApi = retrofit.create(DemoGetApi.class);
-        Observable<retrofit2.Response<DemoBean>> baikeData = demoGetApi.getRxBaikeData("openapi", "600");
+        Observable<Response<DemoBean>> baikeData = demoGetApi.getRxBaikeData("openapi", "600");
         baikeData
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -257,7 +257,7 @@ public class RetrofitDemoUtils {
         request.setData("7yBzesTb9fuAesM2f9bG1uqR8MNxwFGjDEmb1PfohpnKloFvK3LoNC7JIAvA0ba9Htc6ZbyHTXebsqNgNz9/C+oYX2aaUrjpBr7E7nvgi4lwehN8lBpR5ySoXj1dPD+sqAXncwyQVLgumXPPZRlOoYGWE0ktEO3a+BH4ZF0iUKVhS1xEG+nFGxfTjvj2lUL+i8HWKblb+3L18NUUNaSItUjTveyppsTjfbwLcCMz156cRxLnASdey3N8N+eY7dHBb1HXddNjMwv+q7j5hMopDX/mJbUxSSetLqmX/Rp0SPZQIDhOY1HmbEGi45ZxeenYpajywLlWRYZuIunVUtT+H8Vk0DqGHLLmvZQMH1t+Nyo5TsZbFN0iIhDMupLkSpWeY1WIQIFttTufw2dMR+63CtaYrloSyyDiGRTf8Q/swxjO/RgAyvZQYi0+0MV6mR0DR26cMQ0thjvVU7OiQfdY+a6v3SvOuzfBAUo8k8oZCI4RC8LM2w/tWI22ljEjS6oJ64vmh4lVXEhmhg/CV1XMqEyGz/tcdqRwv37taiMBTPVTwkfmTy9pIUIde98TDhT+o5skIbg0jCok3H62u3cGg+J3TlPzff6JZ40OKA5OjWKHMTgoW2N+8/xXPo2iifvSPAhzhJYPh9kYi/FsKbE9ovNSl/Z4TRHzhs8sfW6TSjrCu2Cmrdc/yLs1wPiQ1AbdjnJcICkLq7Pth87wWByRp/pKRx9mUnbe17GuSfeMKxXgTG59fFIj4XHc5NQ04M0Cf5gWY5P8R6DQ9F8DlDwXubPRsb3/qsgHH9wQ8iGbcHHv3Xht9UNNSBFpgwFml7+zKDsh1+UkCtAyHhf46DXBMninNRuIYwFv/p5eG4/3yyNHN9Ov1kLl7T1RPfkuwdqHCmaoiB1yB2aa2hxXeHeHal05IHjJTcSf+lVVqPT1gUpzDa+NVA0sAPvuWrrimupY5+5JUIV4O2IFT3fPyPghYD2b9j56rlCOAw/+wCdqOOV6d9aIXtGOi8k38ywSx5ZOq4PGUzBr4uYXZGnmDJ8MCEgGW6BtBrzrq3+0ei03QpzjcXSatxp7fgRYt3TaMJPUV1V3wfC32jhmxqKVjdzYpsO1cbMooDu98r9bvHZ0pgn/7c6U3dchEP/ua/YvyMRNgFWvefiPiZJzw88kIxmDP58B7Iz/cQTHQ92H69/aYaqjTz3SypFy736ttlWThgFOm7hzAOhKLudoQleWvdMpvw\u003d\u003d");
         request.setUuid("b80c1f46c3893a47");
 
-        Observable<retrofit2.Response<ResponseBody>> listRxResData = demoPostApi.getListRxResData(request);
+        Observable<Response<ResponseBody>> listRxResData = demoPostApi.getListRxResData(request);
         listRxResData.compose(new StringTransformer<>())
                 .subscribe(new Subscriber<String>() {
                     @Override
@@ -296,7 +296,7 @@ public class RetrofitDemoUtils {
         request.setData("7yBzesTb9fuAesM2f9bG1uqR8MNxwFGjDEmb1PfohpnKloFvK3LoNC7JIAvA0ba9Htc6ZbyHTXebsqNgNz9/C+oYX2aaUrjpBr7E7nvgi4lwehN8lBpR5ySoXj1dPD+sqAXncwyQVLgumXPPZRlOoYGWE0ktEO3a+BH4ZF0iUKVhS1xEG+nFGxfTjvj2lUL+i8HWKblb+3L18NUUNaSItUjTveyppsTjfbwLcCMz156cRxLnASdey3N8N+eY7dHBb1HXddNjMwv+q7j5hMopDX/mJbUxSSetLqmX/Rp0SPZQIDhOY1HmbEGi45ZxeenYpajywLlWRYZuIunVUtT+H8Vk0DqGHLLmvZQMH1t+Nyo5TsZbFN0iIhDMupLkSpWeY1WIQIFttTufw2dMR+63CtaYrloSyyDiGRTf8Q/swxjO/RgAyvZQYi0+0MV6mR0DR26cMQ0thjvVU7OiQfdY+a6v3SvOuzfBAUo8k8oZCI4RC8LM2w/tWI22ljEjS6oJ64vmh4lVXEhmhg/CV1XMqEyGz/tcdqRwv37taiMBTPVTwkfmTy9pIUIde98TDhT+o5skIbg0jCok3H62u3cGg+J3TlPzff6JZ40OKA5OjWKHMTgoW2N+8/xXPo2iifvSPAhzhJYPh9kYi/FsKbE9ovNSl/Z4TRHzhs8sfW6TSjrCu2Cmrdc/yLs1wPiQ1AbdjnJcICkLq7Pth87wWByRp/pKRx9mUnbe17GuSfeMKxXgTG59fFIj4XHc5NQ04M0Cf5gWY5P8R6DQ9F8DlDwXubPRsb3/qsgHH9wQ8iGbcHHv3Xht9UNNSBFpgwFml7+zKDsh1+UkCtAyHhf46DXBMninNRuIYwFv/p5eG4/3yyNHN9Ov1kLl7T1RPfkuwdqHCmaoiB1yB2aa2hxXeHeHal05IHjJTcSf+lVVqPT1gUpzDa+NVA0sAPvuWrrimupY5+5JUIV4O2IFT3fPyPghYD2b9j56rlCOAw/+wCdqOOV6d9aIXtGOi8k38ywSx5ZOq4PGUzBr4uYXZGnmDJ8MCEgGW6BtBrzrq3+0ei03QpzjcXSatxp7fgRYt3TaMJPUV1V3wfC32jhmxqKVjdzYpsO1cbMooDu98r9bvHZ0pgn/7c6U3dchEP/ua/YvyMRNgFWvefiPiZJzw88kIxmDP58B7Iz/cQTHQ92H69/aYaqjTz3SypFy736ttlWThgFOm7hzAOhKLudoQleWvdMpvw\u003d\u003d");
         request.setUuid("b80c1f46c3893a47");
 
-        Observable<retrofit2.Response<ResponseBody>> listRxResData = demoPostApi.getListRxResData(request);
+        Observable<Response<ResponseBody>> listRxResData = demoPostApi.getListRxResData(request);
         listRxResData.compose(new StringTransformer<>())
                 .subscribe(new Subscriber<String>() {
                     @Override
@@ -349,7 +349,7 @@ public class RetrofitDemoUtils {
      * @param listRxResData Observable对象
      * @param subscriber    Subscriber对象
      */
-    public static void doRequest(Observable<retrofit2.Response<ResponseBody>> listRxResData,
+    public static void doRequest(Observable<Response<ResponseBody>> listRxResData,
                                  Subscriber<String> subscriber) {
         listRxResData.compose(new StringTransformer<>()).subscribe(subscriber);
     }
@@ -364,7 +364,7 @@ public class RetrofitDemoUtils {
         request.setUuid("b80c1f46c3893a47");
 
         DemoPostApi api = getApi(DemoPostApi.class);
-        Observable<retrofit2.Response<ResponseBody>> listRxResData = api.getListRxResData(request);
+        Observable<Response<ResponseBody>> listRxResData = api.getListRxResData(request);
         doRequest(listRxResData, new Subscriber<String>() {
             @Override
             public void onCompleted() {

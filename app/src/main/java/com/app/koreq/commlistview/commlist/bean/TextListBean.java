@@ -1,6 +1,6 @@
 package com.app.koreq.commlistview.commlist.bean;
 
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
 
 /**
  * project : CommListView

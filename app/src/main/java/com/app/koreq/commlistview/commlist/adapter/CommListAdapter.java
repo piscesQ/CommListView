@@ -3,9 +3,9 @@ package com.app.koreq.commlistview.commlist.adapter;
 import android.content.Context;
 
 import com.app.koreq.commlistview.utils.ListUtils;
-import com.app.koreq.commlistviewlib.adapter.BaseListAdapter;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
-import com.app.koreq.commlistviewlib.render.BaseListRender;
+import com.app.koreq.commlib.commlist.adapter.BaseListAdapter;
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
+import com.app.koreq.commlib.commlist.render.BaseListRender;
 
 import java.util.List;
 

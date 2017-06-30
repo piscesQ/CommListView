@@ -7,7 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
-import com.app.koreq.commwidgetlib.R;
+import com.app.koreq.commlib.R;
 
 /**
  * project : CommListView

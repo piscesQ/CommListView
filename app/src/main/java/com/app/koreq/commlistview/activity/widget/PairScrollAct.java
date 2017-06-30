@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 
+import com.app.koreq.commlib.commlist.bean.BaseListBean;
+import com.app.koreq.commlib.widget.PairScorllWidget.PairScrollView;
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.commlist.adapter.CommListAdapter;
 import com.app.koreq.commlistview.utils.GsonUtils;
-import com.app.koreq.commlistviewlib.bean.BaseListBean;
-import com.app.koreq.commlib.widget.PairScorllWidget.PairScrollView;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;

@@ -9,7 +9,7 @@ import com.app.koreq.commlistview.utils.AESUtils;
 import com.app.koreq.commlistview.utils.GsonUtils;
 
 import okhttp3.ResponseBody;
-import retrofit2.Response;
+import retrofit2_source.Response;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
