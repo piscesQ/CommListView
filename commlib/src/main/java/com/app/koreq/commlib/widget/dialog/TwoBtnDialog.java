@@ -1,4 +1,4 @@
-package com.app.koreq.commwidgetlib.dialog;
+package com.app.koreq.commlib.widget.dialog;
 
 import android.content.DialogInterface;
 import android.os.Bundle;

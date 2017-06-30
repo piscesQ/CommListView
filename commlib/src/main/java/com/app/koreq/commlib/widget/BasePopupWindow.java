@@ -1,4 +1,4 @@
-package com.app.koreq.commwidgetlib;
+package com.app.koreq.commlib.widget;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;

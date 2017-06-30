@@ -1,7 +1,6 @@
 package com.app.koreq.commlistview.activity.widget;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +11,12 @@ import android.widget.Button;
 
 import com.app.koreq.commlib.utils.CustomDownTimer;
 import com.app.koreq.commlistview.R;
-import com.app.koreq.commwidgetlib.BasePopupWindow;
-import com.app.koreq.commwidgetlib.ToastManager;
-import com.app.koreq.commwidgetlib.dialog.OneBtnCallback;
-import com.app.koreq.commwidgetlib.dialog.OneBtnDialog;
-import com.app.koreq.commwidgetlib.dialog.TwoBtnCallback;
-import com.app.koreq.commwidgetlib.dialog.TwoBtnDialog;
+import com.app.koreq.commlib.widget.BasePopupWindow;
+import com.app.koreq.commlib.widget.ToastManager;
+import com.app.koreq.commlib.widget.dialog.OneBtnCallback;
+import com.app.koreq.commlib.widget.dialog.OneBtnDialog;
+import com.app.koreq.commlib.widget.dialog.TwoBtnCallback;
+import com.app.koreq.commlib.widget.dialog.TwoBtnDialog;
 
 /**
  * project : CommListView

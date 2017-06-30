@@ -1,7 +1,7 @@
 package com.app.koreq.aop.aspectj.learndemo;
 
 import com.app.koreq.aop.AopConst;
-import com.app.koreq.commwidgetlib.utils.DebugLog;
+import com.app.koreq.commlib.widget.utils.DebugLog;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;

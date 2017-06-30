@@ -16,8 +16,8 @@ import com.app.koreq.aop.AopConst;
 import com.app.koreq.aop.aspectj.configdemo.DebugTrace;
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.bean.AopTestBean;
-import com.app.koreq.commwidgetlib.ToastManager;
-import com.app.koreq.commwidgetlib.utils.DebugLog;
+import com.app.koreq.commlib.widget.ToastManager;
+import com.app.koreq.commlib.widget.utils.DebugLog;
 
 /**
  * project : CommListView

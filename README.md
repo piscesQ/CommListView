@@ -13,6 +13,17 @@ v3.0 增加网络框架 rxJava + okHttp <br/>
 v4.0 日志统计 bug 统计框架（面向切面） <br/>
 |-- Dexposed （不再更新维护）
 
+v5.0 热更新
+
+
+v6.0 插件化
+
+v7.0 ndk开发
+
+v8.0 事件分发
+
+v9.0 动画、自定义View
+
 
 
 ### 目录结构
@@ -49,6 +60,7 @@ v4.0 日志统计 bug 统计框架（面向切面） <br/>
 2、深入理解Android之AOP：`http://blog.csdn.net/innost/article/details/49387395` <br/>
 3、AOP 之 AspectJ 全面剖析 in Android：`http://www.jianshu.com/p/f90e04bcb326` <br/>
 4、安卓 AOP 三剑客: APT,AspectJ,Javassist：`https://juejin.im/entry/581aec732e958a0054d08213` <br/>
+5、Aspect Oriented Programming in Android：`https://fernandocejas.com/2014/08/03/aspect-oriented-programming-in-android/`
 
 ### AspectJ心得
 1、可以使用handler监控try...catch()中的异常；可以使用AfterThrowing来监控未处理的异常，可做bug日志收集！！！
@@ -57,6 +69,11 @@ v4.0 日志统计 bug 统计框架（面向切面） <br/>
 |- `http://www.eclipse.org/aspectj/`   <=AspectJ官方网站 <br/>
 |- `http://www.eclipse.org/aspectj/doc/released/runtime-api/index.html`  <=AspectJ类库参考文档，内容非常少 <br/>
 |- `http://www.eclipse.org/aspectj/doc/released/aspectj5rt-api/index.html`  <=@AspectJ文档，以后我们用Annotation的方式最多 <br/>
+
+
+### 热更新
+1、阿里百川HotFix的接入步骤：`http://www.jianshu.com/p/01b59f0a2147`
+2、
 
 
 ### 常见问题

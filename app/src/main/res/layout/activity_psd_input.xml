@@ -17,7 +17,7 @@
         android:textSize="18sp"
         />
 
-    <com.app.koreq.commwidgetlib.PayPwdEditText
+    <com.app.koreq.commlib.widget.PayPwdEditText
         android:id="@+id/et_psd_input"
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -30,7 +30,7 @@
         app:paySplitLineWidth="1px"
         />
 
-    <com.app.koreq.commwidgetlib.PayPwdEditText
+    <com.app.koreq.commlib.widget.PayPwdEditText
         android:id="@+id/et_psd_input_2"
         android:layout_width="match_parent"
         android:layout_height="50dp"

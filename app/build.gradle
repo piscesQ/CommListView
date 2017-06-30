@@ -79,7 +79,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':commlistviewlib')
-    compile project(':commwidgetlib')
     compile project(':netlib')
     compile project(path: ':aop-lib')
 

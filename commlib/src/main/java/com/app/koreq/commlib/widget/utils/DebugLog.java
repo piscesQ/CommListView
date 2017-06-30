@@ -1,4 +1,4 @@
-package com.app.koreq.commwidgetlib.utils;
+package com.app.koreq.commlib.widget.utils;
 
 import android.util.Log;
 

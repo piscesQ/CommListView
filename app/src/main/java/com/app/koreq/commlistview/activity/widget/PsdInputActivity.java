@@ -4,10 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.app.koreq.commlistview.R;
-import com.app.koreq.commwidgetlib.PayPwdEditText;
+import com.app.koreq.commlib.widget.PayPwdEditText;
 
 /**
  * project : CommListView

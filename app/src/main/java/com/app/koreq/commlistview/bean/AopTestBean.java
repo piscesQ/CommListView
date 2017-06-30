@@ -1,7 +1,7 @@
 package com.app.koreq.commlistview.bean;
 
 import com.app.koreq.aop.AopConst;
-import com.app.koreq.commwidgetlib.utils.DebugLog;
+import com.app.koreq.commlib.widget.utils.DebugLog;
 
 /**
  * project : CommListView
