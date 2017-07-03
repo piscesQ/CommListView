@@ -8,7 +8,7 @@ package com.app.koreq.commlib.bean;
  */
 public class ScrollCateBean {
     private String name;
-    private int id;
+    private long id;
 
     public String getName() {
         return name;
@@ -18,11 +18,11 @@ public class ScrollCateBean {
         this.name = name;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

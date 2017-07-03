@@ -61,9 +61,9 @@ public class ScrollCateLayout extends FrameLayout implements View.OnClickListene
     }
 
     public void fillData(List<ScrollCateBean> list) {
+        clearInnerViews();
         if (list == null || list.size() == 0) return;
         mRadioButtons.clear();
-        clearInnerViews();
         this.mList = list;
         for (int i = 0; i < list.size(); i++) {
             ScrollCateBean bean = list.get(i);
@@ -124,7 +124,7 @@ public class ScrollCateLayout extends FrameLayout implements View.OnClickListene
         int position = 0;
         for (int i = 0; i < mList.size(); i++) {
             ScrollCateBean bean = mList.get(i);
-            int currentCateId = bean.getId();
+            long currentCateId = bean.getId();
             if (cateId == currentCateId) {
                 position = i;
                 break;

@@ -2,13 +2,32 @@ package com.app.koreq.commlib.utils;
 
 import android.content.Context;
 
+import commlistview.MainApplication;
+
 /**
  * project : CommListView
  * author : YanBin on 5/20/17
  * version : v
- * description : 分辨率单位转换
+ * description : 分辨率单位转换、屏幕分辨率等信息
  */
 public class DensityUtils {
+
+    /**
+     * 手机宽度
+     * @return Unit: px
+     */
+    public static int maxWidth() {
+        return MainApplication.getInstance().getResources().getDisplayMetrics().widthPixels;
+    }
+
+    /**
+     * 手机高度
+     * @return Unit: px
+     */
+    public static int maxHeight() {
+        return MainApplication.getInstance().getResources().getDisplayMetrics().heightPixels;
+    }
+
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
      */
@@ -16,6 +35,7 @@ public class DensityUtils {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
+
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 sp,字体的转换
      */

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.app.koreq.commlistview.R;
+import com.app.koreq.commlistview.activity.widget.CustomViewActivity;
 import com.app.koreq.commlistview.activity.widget.LoadingActivity;
 import com.app.koreq.commlistview.activity.widget.PairScrollAct;
 import com.app.koreq.commlistview.activity.widget.PopWinActivity;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnPopWin = (Button) findViewById(R.id.btn_pop_window);
 
         Button btnLoading = (Button) findViewById(R.id.btn_loading);
+        Button btnCustomView = (Button) findViewById(R.id.btn_custom_view);
 
 
         btnCommList.setOnClickListener(this);
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPsd.setOnClickListener(this);
         btnPopWin.setOnClickListener(this);
         btnLoading.setOnClickListener(this);
+        btnCustomView.setOnClickListener(this);
     }
 
     private void initData() {
@@ -98,8 +101,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_pop_window:    //PopupWindow
                 PopWinActivity.launchAct(this);
                 break;
-            case R.id.btn_loading:    //PopupWindow
+            case R.id.btn_loading:    //loading、 网络状态
                 LoadingActivity.launchAct(this);
+                break;
+            case R.id.btn_custom_view:    //自定义View
+                CustomViewActivity.launchAct(this);
                 break;
         }
     }
