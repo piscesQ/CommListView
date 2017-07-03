@@ -8,7 +8,7 @@ package com.app.koreq.aop.aspectj.configdemo;
  */
 
 import com.app.koreq.aop.AopConst;
-import com.app.koreq.commlib.widget.utils.DebugLog;
+import com.app.koreq.commlib.utils.DebugLog;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

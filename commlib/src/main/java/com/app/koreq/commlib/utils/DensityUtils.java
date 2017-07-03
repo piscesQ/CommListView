@@ -3,10 +3,11 @@ package com.app.koreq.commlib.utils;
 import android.content.Context;
 
 /**
- * @author:KoreQ
- * @date: 5/20/17.
+ * project : CommListView
+ * author : YanBin on 5/20/17
+ * version : v
+ * description : 分辨率单位转换
  */
-
 public class DensityUtils {
     /**
      * 根据手机的分辨率从 px(像素) 的单位 转成为 dp

@@ -1,4 +1,4 @@
-package com.app.koreq.commlib.widget.utils;
+package com.app.koreq.commlib.utils;
 
 import android.content.Context;
 import android.content.Intent;
