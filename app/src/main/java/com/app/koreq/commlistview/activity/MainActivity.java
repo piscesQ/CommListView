@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnLoading = (Button) findViewById(R.id.btn_loading);
         Button btnCustomView = (Button) findViewById(R.id.btn_custom_view);
+        Button btnEmbedAct = (Button) findViewById(R.id.btn_embed_act);
 
 
         btnCommList.setOnClickListener(this);
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPopWin.setOnClickListener(this);
         btnLoading.setOnClickListener(this);
         btnCustomView.setOnClickListener(this);
+        btnEmbedAct.setOnClickListener(this);
     }
 
     private void initData() {
@@ -99,13 +101,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 PsdInputActivity.launchAct(this);
                 break;
             case R.id.btn_pop_window:    //PopupWindow
-                PopWinActivity.launchAct(this);
+                PopWinActivity.launchAct(this, "MainActivity");
                 break;
             case R.id.btn_loading:    //loading、 网络状态
                 LoadingActivity.launchAct(this);
                 break;
             case R.id.btn_custom_view:    //自定义View
                 CustomViewActivity.launchAct(this);
+                break;
+            case R.id.btn_embed_act:    //嵌套Act
+                EmbedActivity.launchAct(this);
                 break;
         }
     }

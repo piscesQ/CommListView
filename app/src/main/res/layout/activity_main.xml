@@ -119,6 +119,13 @@
                 android:text="Custom View"
                 android:layout_below="@+id/btn_loading"
                 />
+            <Button
+                android:id="@+id/btn_embed_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="嵌套Act"
+                android:layout_below="@id/btn_custom_view"
+                />
 
         </RelativeLayout>
 
