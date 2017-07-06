@@ -25,6 +25,15 @@ v8.0 事件分发
 v9.0 动画、自定义View
 
 
+### 依赖图
+
+app
+qrcode aop-lib
+commlib
+third    netlib
+
+
+
 
 ### 目录结构
 ```
@@ -45,7 +54,7 @@ v9.0 动画、自定义View
 1、在`res`目录下增加`xml`目录，并添加文件：`network_security_config.xml` <br/>
 2、在AndroidManifest.xml文件中的application标签下增加属性`android:networkSecurityConfig="@xml/network_security_config"` <br/>
 
-**注意：**该方法只需要在sdk版本大于等于24才需要配置， 低版本没有`android:networkSecurityConfig="@xml/network_security_config"`属性 <br/>
+**注意：** 该方法只需要在sdk版本大于等于24才需要配置， 低版本没有`android:networkSecurityConfig="@xml/network_security_config"`属性 <br/>
 
 ### 网络框架
 具体参见对应包中的文档

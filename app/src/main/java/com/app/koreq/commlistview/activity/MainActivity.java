@@ -13,6 +13,7 @@ import com.app.koreq.commlistview.activity.widget.LoadingActivity;
 import com.app.koreq.commlistview.activity.widget.PairScrollAct;
 import com.app.koreq.commlistview.activity.widget.PopWinActivity;
 import com.app.koreq.commlistview.activity.widget.PsdInputActivity;
+import com.google.zxing.qrcode.encoder.QRCode;
 
 /**
  * project : CommListView
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnLoading = (Button) findViewById(R.id.btn_loading);
         Button btnCustomView = (Button) findViewById(R.id.btn_custom_view);
         Button btnEmbedAct = (Button) findViewById(R.id.btn_embed_act);
+        Button btnQRCode = (Button) findViewById(R.id.btn_qrcode);
 
 
         btnCommList.setOnClickListener(this);
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnLoading.setOnClickListener(this);
         btnCustomView.setOnClickListener(this);
         btnEmbedAct.setOnClickListener(this);
+        btnQRCode.setOnClickListener(this);
     }
 
     private void initData() {
@@ -111,6 +114,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_embed_act:    //嵌套Act
                 EmbedActivity.launchAct(this);
+                break;
+            case R.id.btn_qrcode:    //二维码
+                QRCodeActivity.launchAct(this);
                 break;
         }
     }

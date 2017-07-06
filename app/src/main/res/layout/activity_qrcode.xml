@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.koreq.commlistview.activity.QRCodeActivity"
+    >
+
+    <EditText
+        android:id="@+id/qrcode_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入需要编码的字符串"
+        />
+
+    <Button
+        android:id="@+id/qrcode_encode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qrcode_edit"
+        android:text="生成二维码"
+        />
+
+    <Button
+        android:id="@+id/qrcode_decode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/qrcode_edit"
+        android:text="识别二维码"
+        />
+
+    <ImageView
+        android:id="@+id/qrcode_encode_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qrcode_encode"
+        android:layout_marginTop="10dp"
+        />
+</RelativeLayout>

@@ -1,1 +1,1 @@
-include ':app', ':ptr-lib', ':netlib', ':commlib', ':aop-lib'
+include ':app', ':ptr-lib', ':netlib', ':commlib', ':aop-lib', ':third', ':qrcode'

@@ -80,6 +80,7 @@ dependencies {
     })
     compile project(':netlib')
     compile project(path: ':aop-lib')
+    compile project(':qrcode')
 
     //    compile 'com.squareup.okhttp:okhttp:2.4.0'
     compile 'com.android.support:appcompat-v7:25.3.1'

@@ -54,6 +54,8 @@
         </activity>
         <activity android:name=".activity.EmbedActivity">
         </activity>
+        <activity android:name=".activity.QRCodeActivity">
+        </activity>
     </application>
 
 </manifest>
