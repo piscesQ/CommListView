@@ -72,7 +72,7 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
         mMarqueeView.setOnItemClickListener(new UPMarqueeView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-                ToastManager.showShortMessage(CustomViewActivity.this, "click the " + position + " item!!!");
+                ToastManager.showShortMessage(CustomViewActivity.this, mMarqueeData.get(position));
             }
         });
     }
@@ -88,11 +88,13 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
         //------------------------------------------------------------------------------------------
         mMarqueeData = new ArrayList<>();
-        mMarqueeData.add("1-家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
-        mMarqueeData.add("2-iPhone8最感人变化成真，必须买买买买!!!!");
-        mMarqueeData.add("3-简直是白菜价！日本玩家33万甩卖15万张游戏王卡");
-        mMarqueeData.add("4-iPhone7价格曝光了！看完感觉我的腰子有点疼...");
-        mMarqueeData.add("5-主人内疚逃命时没带够，回废墟狂挖30小时！");
+        mMarqueeData.add("1-最是人间留不住，朱颜辞镜花辞树");
+        mMarqueeData.add("2-人生若只如初见，何事秋风悲画扇，等闲变却故人心，却道故人心易变");
+        mMarqueeData.add("3-天南地北双飞客，老翅几回寒暑");
+        mMarqueeData.add("4-红酥手，黄藤酒，满城春色宫墙柳。东风恶欢情薄，一杯愁绪，几年离索，错错错");
+        mMarqueeData.add("5-春如旧，人空瘦，泪痕红浥鲛绡透，桃花落，闲池阁，山盟虽在，锦书难脱，莫莫莫");
+        mMarqueeData.add("6-东风恶，欢情薄，雨送黄昏花易落，晓风干，泪痕残，欲笺心事，独倚斜阑，难难难");
+        mMarqueeData.add("7-人成各，今非昨，病魂常似秋千索，角声寒，夜阑珊，怕人寻问，咽泪装欢，瞒瞒瞒");
         mMarqueeView.setTextViewData(mMarqueeData);
     }
 

@@ -52,21 +52,24 @@ public class UPMarqueeView extends ViewFlipper {
     }
 
     /**
-     *
      * @param list
-     * @param textSize Unit : sp
+     * @param textSize  Unit : sp
      * @param textColor
      */
     public void setTextViewData(List<String> list, float textSize, int textColor) {
+        if(list == null) return;
         List<View> textList = new ArrayList<>();
         for (String str : list) {
-            TextView textView = new TextView(mContext);
-            textView.setLines(1);
-            textView.setTextSize(textSize);
-            textView.setTextColor(textColor);
-            textView.setText(str);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
-            textList.add(textView);
+            if (!TextUtils.isEmpty(str)) {
+                TextView textView = new TextView(mContext);
+                textView.setLines(1);
+                textView.setTextSize(textSize);
+                textView.setTextColor(textColor);
+                // TODO Kore 是否加padding
+                textView.setText(str);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textList.add(textView);
+            }
         }
         setViews(textList);
     }

@@ -9,11 +9,20 @@
     >
 
     <LinearLayout
-        android:id="@+id/custom_view_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+
+        <LinearLayout
+            android:id="@+id/custom_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+        </LinearLayout>
+
         <com.app.koreq.commlib.widget.UPMarqueeView
             android:id="@+id/custom_marquee"
             android:layout_width="match_parent"
@@ -22,5 +31,99 @@
             android:background="@color/blue_50ffe6"
             android:padding="10dp"
             />
+
+        <RelativeLayout
+            android:id="@+id/setting_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_ee"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:background="@color/green_00ee99"
+                />
+
+            <ImageView
+                android:id="@+id/setting_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                />
+
+            <TextView
+                android:id="@+id/setting_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/setting_logo"
+                android:gravity="center"
+                android:lines="1"
+                android:text="我是设置项"
+                />
+
+            <ImageView
+                android:id="@+id/setting_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_arrow_right"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/setting_arrow"
+                android:clipToPadding="false"
+                android:paddingLeft="4dp"
+                android:paddingTop="4dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/setting_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/yellow"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="0dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:background="@color/orange_ffaa55"
+                        android:text="文本"
+                        android:includeFontPadding="false"
+                        />
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_24"
+                        android:layout_height="@dimen/dp_24"
+                        android:layout_marginBottom="4dp"
+                        android:background="@color/blue_00eeee"
+                        />
+
+                </LinearLayout>
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="-4dp"
+                android:layout_marginTop="-4dp"
+                android:layout_toRightOf="@id/setting_desc"
+                android:src="@drawable/red_point"
+                />
+
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
