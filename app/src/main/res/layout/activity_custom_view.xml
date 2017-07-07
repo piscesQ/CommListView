@@ -14,6 +14,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-
+        <com.app.koreq.commlib.widget.UPMarqueeView
+            android:id="@+id/custom_marquee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/blue_50ffe6"
+            android:padding="10dp"
+            />
     </LinearLayout>
 </ScrollView>

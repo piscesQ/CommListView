@@ -16,6 +16,7 @@ import com.app.koreq.commlib.utils.DensityUtils;
 import com.app.koreq.commlib.widget.FoldButton;
 import com.app.koreq.commlib.widget.ScrollCateLayout;
 import com.app.koreq.commlib.widget.ToastManager;
+import com.app.koreq.commlib.widget.UPMarqueeView;
 import com.app.koreq.commlistview.R;
 import com.app.koreq.commlistview.utils.GsonUtils;
 import com.google.gson.reflect.TypeToken;
@@ -34,6 +35,9 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
     private ScrollCateLayout mScrollCateLayout; //水平滚动的标签分类
     private List<ScrollCateBean> mScrollList;
     private FoldButton mFoldButton;
+
+    private UPMarqueeView mMarqueeView;
+    private List<String> mMarqueeData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +64,17 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
                 new LinearLayout.LayoutParams(DensityUtils.dip2px(this, 35), DensityUtils.dip2px(this, 35));
         foldButtonParams.gravity = Gravity.RIGHT;
         mContainer.addView(mFoldButton, foldButtonParams);
+
+        //------------------------------------------------------------------------------------------
+        //垂直轮播的View，支持各种View
+//        参考：https://github.com/dreamlivemeng/UpMarqueeTextView-master
+        mMarqueeView = (UPMarqueeView) findViewById(R.id.custom_marquee);
+        mMarqueeView.setOnItemClickListener(new UPMarqueeView.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position, View view) {
+                ToastManager.showShortMessage(CustomViewActivity.this, "click the " + position + " item!!!");
+            }
+        });
     }
 
     private void initData() {
@@ -70,6 +85,15 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
         mScrollCateLayout.fillData(mScrollList);
 
         setFabButtonState(true, mScrollList, "1");
+
+        //------------------------------------------------------------------------------------------
+        mMarqueeData = new ArrayList<>();
+        mMarqueeData.add("1-家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
+        mMarqueeData.add("2-iPhone8最感人变化成真，必须买买买买!!!!");
+        mMarqueeData.add("3-简直是白菜价！日本玩家33万甩卖15万张游戏王卡");
+        mMarqueeData.add("4-iPhone7价格曝光了！看完感觉我的腰子有点疼...");
+        mMarqueeData.add("5-主人内疚逃命时没带够，回废墟狂挖30小时！");
+        mMarqueeView.setTextViewData(mMarqueeData);
     }
 
     private void setFabButtonState(boolean isMenu, List<ScrollCateBean> subGroupInfo, final String groupId) {
