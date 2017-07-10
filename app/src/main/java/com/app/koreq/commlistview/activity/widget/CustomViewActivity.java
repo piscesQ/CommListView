@@ -38,6 +38,12 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
     private UPMarqueeView mMarqueeView;
     private List<String> mMarqueeData;
+    private View mSettingText;
+    private View mSettingImg;
+    private View mSettingRed;
+    private boolean textFlag;
+    private boolean imgFlag;
+    private boolean redFlag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +81,19 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
                 ToastManager.showShortMessage(CustomViewActivity.this, mMarqueeData.get(position));
             }
         });
+
+        //------------------------------------------------------------------------------------------
+        //设置项
+        View textState = findViewById(R.id.setting_text_status);
+        View imgState = findViewById(R.id.setting_img_status);
+        View redState = findViewById(R.id.setting_red_status);
+        mSettingText = findViewById(R.id.setting_desc_text);
+        mSettingImg = findViewById(R.id.setting_desc_img);
+        mSettingRed = findViewById(R.id.setting_desc_red);
+        textState.setOnClickListener(this);
+        imgState.setOnClickListener(this);
+        redState.setOnClickListener(this);
+
     }
 
     private void initData() {
@@ -178,6 +197,33 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.setting_text_status:
+                if (textFlag) {
+                    mSettingText.setVisibility(View.VISIBLE);
+                } else {
+                    mSettingText.setVisibility(View.GONE);
+                }
+                textFlag = !textFlag;
+                break;
+            case R.id.setting_img_status:
+                if (imgFlag) {
+                    mSettingImg.setVisibility(View.VISIBLE);
+                } else {
+                    mSettingImg.setVisibility(View.GONE);
+                }
+                imgFlag = !imgFlag;
+                break;
+            case R.id.setting_red_status:
+                if (redFlag) {
+                    mSettingRed.setVisibility(View.VISIBLE);
+                } else {
+                    mSettingRed.setVisibility(View.GONE);
+                }
+                redFlag = !redFlag;
+                break;
 
+        }
     }
 }
