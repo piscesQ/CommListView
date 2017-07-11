@@ -121,12 +121,31 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
         SpannableStringBuilder stringBuilder = new SpannableStringBuilder();
 
         String between = "";
-        for (String tag : tagList) {
+//        for (String tag : tagList) {
+        for(int i = 0 ; i < tagList.size(); i++){
+            String tag = tagList.get(i);
             stringBuilder.append(between);
             if (between.length() == 0) between = "  ";
             String thisTag = "  "+tag+"  ";
             stringBuilder.append(thisTag);
-            stringBuilder.setSpan(new RoundedBackgroundSpan(this),
+
+            RoundedBackgroundSpan backgroundSpan = null;
+            switch (i) {
+                case 1:
+                    backgroundSpan = new RoundedBackgroundSpan(this, R.color.blue_00eeee, R.color.red_ff9999);
+                    break;
+                case 2:
+                    backgroundSpan = new RoundedBackgroundSpan(this, R.color.gray_f5, R.color.red_ff9999, R.color.black);
+                    break;
+                case 3:
+                    backgroundSpan = new RoundedBackgroundSpan(this, R.color.gray_f5, R.color.red_ff9999, R.color.black, R.color.yellow);
+                    break;
+                default:
+                    backgroundSpan = new RoundedBackgroundSpan(this);
+                    break;
+            }
+
+            stringBuilder.setSpan(backgroundSpan,
                     stringBuilder.length() - thisTag.length(),
                     stringBuilder.length() - thisTag.length() + thisTag.length(),
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
