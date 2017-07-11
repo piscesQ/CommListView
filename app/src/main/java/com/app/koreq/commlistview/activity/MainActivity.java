@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnCustomView = (Button) findViewById(R.id.btn_custom_view);
         Button btnEmbedAct = (Button) findViewById(R.id.btn_embed_act);
         Button btnQRCode = (Button) findViewById(R.id.btn_qrcode);
+        Button btnSoftInputMode = (Button) findViewById(R.id.btn_soft_input_mode);
 
 
         btnCommList.setOnClickListener(this);
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnCustomView.setOnClickListener(this);
         btnEmbedAct.setOnClickListener(this);
         btnQRCode.setOnClickListener(this);
+        btnSoftInputMode.setOnClickListener(this);
     }
 
     private void initData() {
@@ -117,6 +119,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_qrcode:    //二维码
                 QRCodeActivity.launchAct(this);
+                break;
+            case R.id.btn_soft_input_mode:    //windowSoftInputMode属性测试
+                SoftInputModeActivity.launchAct(this);
                 break;
         }
     }

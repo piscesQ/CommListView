@@ -138,6 +138,14 @@
                 android:text="二维码"
                 />
 
+            <Button
+                android:id="@+id/btn_soft_input_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_qrcode"
+                android:text="windowSoftInputMode"
+                />
+
         </RelativeLayout>
 
         <RelativeLayout

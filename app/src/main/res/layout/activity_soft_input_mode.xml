@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.app.koreq.commlistview.activity.SoftInputModeActivity"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_15"
+            android:hint="EditText - 1"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/red_ff9999"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_15"
+            android:hint="EditText - 1"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/blue_50ffe6"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_15"
+            android:hint="EditText - 1"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/orange_99ffaa55"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_15"
+            android:hint="EditText - 1"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/purple_7150ff"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:text="Foot"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
