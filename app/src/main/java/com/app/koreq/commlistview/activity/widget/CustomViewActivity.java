@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.app.koreq.commlib.bean.ScrollCateBean;
 import com.app.koreq.commlib.utils.DensityUtils;
+import com.app.koreq.commlib.widget.CircleTextView;
 import com.app.koreq.commlib.widget.FoldButton;
 import com.app.koreq.commlib.widget.RoundedBackgroundSpan;
 import com.app.koreq.commlib.widget.ScrollCateLayout;
@@ -62,6 +63,7 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
     private boolean imgFlag;
     private boolean redFlag;
     private LinearLayout mContainer;
+    private CircleTextView mCircleTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,11 +124,11 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
         String between = "";
 //        for (String tag : tagList) {
-        for(int i = 0 ; i < tagList.size(); i++){
+        for (int i = 0; i < tagList.size(); i++) {
             String tag = tagList.get(i);
             stringBuilder.append(between);
             if (between.length() == 0) between = "  ";
-            String thisTag = "  "+tag+"  ";
+            String thisTag = "  " + tag + "  ";
             stringBuilder.append(thisTag);
 
             RoundedBackgroundSpan backgroundSpan = null;
@@ -159,9 +161,12 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
         textViewSpan();     //测试demo
 
+        //------------------------------------------------------------------------------------------
+        mCircleTextView = (CircleTextView) findViewById(R.id.circle_text_view);
+        mCircleTextView.setOnClickListener(this);
     }
 
-    private void textViewSpan(){
+    private void textViewSpan() {
 
         // 创建一个 SpannableString对象，
         // SpannableString implements GetChars,Spannable,CharSequence
@@ -200,7 +205,7 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
         // 设置上下标
         msp.setSpan(new SubscriptSpan(), 34, 35, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 下标（可以使用0.5倍字体代替）
         msp.setSpan(new SuperscriptSpan(), 36, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 上标
-        msp.setSpan(new RelativeSizeSpan(0.5f),36, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 上标 - 变成0.5倍字体
+        msp.setSpan(new RelativeSizeSpan(0.5f), 36, 37, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 上标 - 变成0.5倍字体
 
         // 超级链接（需要添加setMovementMethod方法附加响应）
         msp.setSpan(new URLSpan("tel:4155551212"), 37, 39, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 电话
@@ -212,7 +217,6 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
 
         // 设置字体大小（相对值,单位：像素） 参数表示为默认字体宽度的多少倍
         msp.setSpan(new ScaleXSpan(2.0f), 49, 51, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE); // 2.0f表示默认字体宽度的两倍，即X轴方向放大为默认字体的两倍，而高度不变
-
 
 
         TextView textView = new TextView(this);
@@ -349,7 +353,14 @@ public class CustomViewActivity extends Activity implements View.OnClickListener
                 }
                 redFlag = !redFlag;
                 break;
-
+            case R.id.circle_text_view:     //背景（圆角）可变色的TextView
+                int[] colors = {Color.BLACK, Color.GRAY, Color.GREEN};
+                if (Math.random() > 0.5) {
+                    mCircleTextView.setBgAndRadius(colors[(int) Math.floor(Math.random() * 3)],10);
+                } else {
+                    mCircleTextView.setBgAndRadius(colors[(int) Math.floor(Math.random() * 3)], 3);
+                }
+                break;
         }
     }
 }

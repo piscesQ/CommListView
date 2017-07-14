@@ -13,6 +13,7 @@ public class SoftInputModeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_soft_input_mode);
+        //参考 ： http://www.jianshu.com/p/0ad76e854a8e
     }
 
     public static void launchAct(Context context) {

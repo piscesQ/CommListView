@@ -18,8 +18,8 @@
             android:id="@+id/custom_view_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@color/gray_ee"
+            android:orientation="vertical"
             >
 
         </LinearLayout>
@@ -162,5 +162,19 @@
                 android:background="@color/green_00ee99"
                 />
         </RelativeLayout>
+
+        <com.app.koreq.commlib.widget.CircleTextView
+            android:id="@+id/circle_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/blue_50ffe6"
+            android:paddingLeft="@dimen/dp_3"
+            android:paddingRight="@dimen/dp_3"
+            android:text="来点我呀！！"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            />
     </LinearLayout>
 </ScrollView>
