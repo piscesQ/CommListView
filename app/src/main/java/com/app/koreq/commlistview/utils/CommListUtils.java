@@ -13,7 +13,7 @@ import com.app.koreq.commlib.commlist.render.BaseListRender;
  * version : v1.0
  * description :
  */
-public class ListUtils {
+public class CommListUtils {
 
     public static int getTypeCount() {
         return ListConstant.TYPE_COUNT;

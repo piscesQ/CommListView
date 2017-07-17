@@ -49,6 +49,7 @@ public class CircleTextView extends AppCompatTextView {
         int measuredWidth = getMeasuredWidth();
 //        mBgRect = new RectF(0, 0, measuredWidth, measuredHeight);
         mPaint.setColor(mBgColor);
+        mPaint.setAntiAlias(true);  //抗锯齿
         //TODO kore  此方法：drawRoundRect  要求sdk >= 21
 //        canvas.drawRoundRect(mBgRect, DensityUtils.dip2px(getContext(), mRadius), DensityUtils.dip2px(getContext(), mRadius), mPaint);
         canvas.drawRoundRect(0, 0, measuredWidth, measuredHeight,
