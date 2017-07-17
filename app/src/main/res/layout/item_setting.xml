@@ -124,7 +124,7 @@
         </RelativeLayout>
 
         <View
-            android:id="@+id/setting_divider"
+            android:id="@+id/setting_line_divider"
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_alignParentBottom="true"
@@ -134,5 +134,11 @@
             />
     </RelativeLayout>
 
+    <View
+        android:id="@+id/setting_group_divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray_f5"
+        />
 
 </LinearLayout>

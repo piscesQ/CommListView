@@ -93,7 +93,8 @@ public class SettingManager {
                 holder.descText = (TextView) itemView.findViewById(R.id.setting_desc_text);
                 holder.descImg = (ImageView) itemView.findViewById(R.id.setting_desc_img);
                 holder.redPoint = (ImageView) itemView.findViewById(R.id.setting_desc_red);
-                holder.divider = itemView.findViewById(R.id.setting_divider);
+                holder.lineDivider = itemView.findViewById(R.id.setting_line_divider);
+                holder.groupDivider = itemView.findViewById(R.id.setting_group_divider);
 
                 itemView.setTag(holder);
                 group.addView(itemView);
@@ -181,9 +182,11 @@ public class SettingManager {
                 }
             }
             if (i == listSize - 1) {
-                holder.divider.setVisibility(View.GONE);
+                holder.lineDivider.setVisibility(View.GONE);
+                holder.groupDivider.setVisibility(View.VISIBLE);
             } else {
-                holder.divider.setVisibility(View.VISIBLE);
+                holder.lineDivider.setVisibility(View.VISIBLE);
+                holder.groupDivider.setVisibility(View.GONE);
             }
             final ViewHolder finalHolder = holder;
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -276,7 +279,8 @@ public class SettingManager {
         TextView descText;
         ImageView descImg;
         ImageView redPoint;
-        View divider;
+        View lineDivider;
+        View groupDivider;
     }
 
     public MeItemClickListener getListener() {
