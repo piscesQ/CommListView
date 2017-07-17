@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ll_more_main_layout"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:gravity="center_vertical"
     android:orientation="vertical"
@@ -108,7 +108,6 @@
                     android:layout_toRightOf="@id/setting_desc_text"
                     android:visibility="gone"
                     />
-
 
                 <ImageView
                     android:id="@+id/setting_desc_red"

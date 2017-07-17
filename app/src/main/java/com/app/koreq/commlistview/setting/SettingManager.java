@@ -5,12 +5,10 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.app.koreq.commlib.utils.DensityUtils;
 import com.app.koreq.commlib.utils.ListUtils;
 import com.app.koreq.commlib.widget.CircleTextView;
 import com.app.koreq.commlistview.R;
@@ -53,7 +51,7 @@ public class SettingManager {
     private int mUnReadNum; //统计红点和气泡数量
 
     public interface MeItemClickListener {
-        void clickItem(SettingBean itemData);
+        void clickItem(SettingBeanV2.DataBean itemData);
     }
 
     public SettingManager(Context context) {
@@ -61,7 +59,7 @@ public class SettingManager {
     }
 
     //填充每组数据
-    public View createGroup(LinearLayout group, List<SettingBean> groupList) throws Exception {
+    public View createGroup(LinearLayout group, List<SettingBeanV2.DataBean> groupList) throws Exception {
         if (groupList == null || groupList.size() == 0) {
             return group;
         }
@@ -100,9 +98,9 @@ public class SettingManager {
                 group.addView(itemView);
             }
 
-            final SettingBean itemData = groupList.get(i);
+            final SettingBeanV2.DataBean itemData = groupList.get(i);
             if (itemData == null) continue;
-            SettingBean.LinkRuleBean itemRule = itemData.linkRule;
+            SettingBeanV2.DataBean.LinkRuleBean itemRule = itemData.linkRule;
             String linkPhoto = itemData.linkPhoto;
             if (isFromLocal(linkPhoto)) {   //判断图片是否存在本地
                 String strResId = linkPhoto.substring(LOCAL_RES_PREFIX.length());
@@ -200,11 +198,11 @@ public class SettingManager {
                 }
             });
         }
-        View divider = new View(mContext);
-        divider.setBackgroundColor(mContext.getResources().getColor(R.color.gray_f5));
-        LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dip2px(mContext, 10));
-        group.addView(divider, dividerParams);
+//        View divider = new View(mContext);
+//        divider.setBackgroundColor(mContext.getResources().getColor(R.color.gray_f5));
+//        LinearLayout.LayoutParams dividerParams = new LinearLayout.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT, DensityUtils.dip2px(mContext, 10));
+//        group.addView(divider, dividerParams);
 
         return group;
     }
@@ -236,10 +234,10 @@ public class SettingManager {
 
     private List<LinearLayout> groupsView = new ArrayList<>();
 
-    public void createSettingView(@NonNull LinearLayout container, @NonNull List<List<SettingBean>> allGroupList) {
+    public void createSettingView(@NonNull LinearLayout container, @NonNull List<List<SettingBeanV2.DataBean>> allGroupList) {
         int size = allGroupList.size();
         for (int i = 0; i < size; i++) {
-            List<SettingBean> group = allGroupList.get(i);
+            List<SettingBeanV2.DataBean> group = allGroupList.get(i);
             LinearLayout groupView = getGroupView(i);
             View showGroup = null;
             try {

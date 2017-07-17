@@ -13,7 +13,6 @@ import com.app.koreq.commlistview.activity.widget.LoadingActivity;
 import com.app.koreq.commlistview.activity.widget.PairScrollAct;
 import com.app.koreq.commlistview.activity.widget.PopWinActivity;
 import com.app.koreq.commlistview.activity.widget.PsdInputActivity;
-import com.google.zxing.qrcode.encoder.QRCode;
 
 /**
  * project : CommListView
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnEmbedAct = (Button) findViewById(R.id.btn_embed_act);
         Button btnQRCode = (Button) findViewById(R.id.btn_qrcode);
         Button btnSoftInputMode = (Button) findViewById(R.id.btn_soft_input_mode);
+        Button btnSetting = (Button) findViewById(R.id.btn_setting);
 
 
         btnCommList.setOnClickListener(this);
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnEmbedAct.setOnClickListener(this);
         btnQRCode.setOnClickListener(this);
         btnSoftInputMode.setOnClickListener(this);
+        btnSetting.setOnClickListener(this);
     }
 
     private void initData() {
@@ -122,6 +123,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_soft_input_mode:    //windowSoftInputMode属性测试
                 SoftInputModeActivity.launchAct(this);
+                break;
+            case R.id.btn_setting:    //设置页面
+                SettingActivity.launchAct(this);
                 break;
         }
     }

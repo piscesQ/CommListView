@@ -62,6 +62,8 @@
             android:windowSoftInputMode="stateVisible|adjustPan"
             >
         </activity>
+        <activity android:name=".activity.SettingActivity">
+        </activity>
     </application>
 
 </manifest>
