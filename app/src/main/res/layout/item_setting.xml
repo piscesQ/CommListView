@@ -107,6 +107,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_toRightOf="@id/setting_desc_text"
                     android:visibility="gone"
+                    android:background="@color/blue_50ffe6"
                     />
 
                 <ImageView
